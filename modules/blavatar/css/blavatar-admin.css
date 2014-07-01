@@ -18,15 +18,17 @@
 		width: 100%;
 	}
 }
+.blavatar-image{
+	margin: 20px auto;
+	text-align: center;
+}
 .blavatar-content{
 	padding: 10px;
 }
 .blavatar-crop-shell {
 	max-width: 720px;
 }
-.blavatar-crop-image {
-}
-	
+
 .blavatar-crop-preview-shell {
 	float: right;
 	width: 172px;
@@ -61,4 +63,7 @@
 	overflow:hidden;
 	border-radius: 16px;
 }
-
+.blavatar-title .small{
+	color:#999;
+	font-size: 16px;
+}

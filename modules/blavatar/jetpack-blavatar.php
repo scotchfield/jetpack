@@ -21,7 +21,8 @@ class Jetpack_Blavatar {
 	public $module 		= 'blavatar';
 	public $version 	= 1;
 
-	public static $min_size = 512; // same as wp.com
+	public static $min_size = 512; //  the minimum size of the blvatar, 512 is the same as wp.com can be over writtern by BLAVATAR_MIN_SIZE
+	public static $page_crop = 512; // the size to which to crop the image so that we can dispay it in the UI nicely
 
 	public static $accepted_file_types = array( 
 		'image/jpg', 
@@ -29,6 +30,8 @@ class Jetpack_Blavatar {
 		'image/gif', 
 		'image/png' 
 	);
+
+	public static $blavatar_sizes = array( 256, 128, 64, 32, 16 );
 
 	/**
 	 * Singleton
@@ -52,7 +55,30 @@ class Jetpack_Blavatar {
 		add_action( 'admin_init', array( $this, 'admin_init' ) );
 		add_action( 'admin_print_styles-options-general.php', array( $this, 'add_admin_styles' ) );
 
+		add_action( 'wp_head', array( $this, 'blavatar_add_meta' ) );
+		add_action( 'admin_head', array( $this, 'blavatar_add_meta' ) );
+
 	}
+
+	/**
+	 * Add meta elements to a blog header to light up Blavatar icons recognized by user agents.
+	 * @link http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#rel-icon HTML5 specification link icon
+	 * @todo change Blavatar ico sizes once all Blavatars have been backfilled to new code
+	 * @todo update apple-touch-icon to support retina display 114px and iPad 72px
+	 */
+	function blavatar_add_meta() {
+
+		if ( apply_filters( 'blavatar_has_favicon', false ) )
+			return;
+
+		$url_114 = blavatar_url( null,  114 );
+		echo '<link rel="icon" href="'.esc_url( blavatar_url( null,  32 ) ) .'" sizes="32x32" />' . "\n";
+		echo '<link rel="apple-touch-icon-precomposed" href="'. esc_url( $url_114 ) .'">' . "\n";
+		// windows tiles
+		echo '<meta name="msapplication-TileImage" content="' . esc_url( $url_114 ) . '"/>' . "\n";
+
+	}
+
 
 	/**
 	 * Add a hidden upload page for people that don't like modal windows
@@ -153,28 +179,28 @@ class Jetpack_Blavatar {
 		
 		?>
 		<div id="blavatar" class="blavatar-shell">
-			<h3><?php echo esc_html_e( 'Blog Picture / Icon', 'jetpack'  ); ?></h3>
+			<h3><?php echo esc_html_e( 'Site Image', 'jetpack'  ); ?></h3>
 			<div class="blavatar-content postbox">
 				<div class="blavatar-image">
-				<?php if( has_blavatar() ) { ?>
-					<?php get_blavatar(); ?>
-				<?php } ?>
+				<?php if( has_blavatar() ) { 
+					echo get_blavatar( null, 128 ); 
+					} ?>
 				</div>
 				<div class="blavatar-meta">
 
 				<?php if( has_blavatar() ) { ?>
 				
-					<a href="<?php echo esc_url( $upload_blovatar_url ); ?>" id="blavatar-update" class="button"><?php echo esc_html_e( 'Change the Blavatar', 'jetpack'  ); ?></a>
-					<a href="<?php echo esc_url( $remove_blovatar_url ); ?>" id="blavatar-remove" class="button"><?php echo esc_html_e( 'Remove the Blavatar', 'jetpack'  ); ?></a>
+					<p><a href="<?php echo esc_url( $upload_blovatar_url ); ?>" id="blavatar-update" class="button"><?php echo esc_html_e( 'Update Image', 'jetpack'  ); ?></a>
+					<a href="<?php echo esc_url( $remove_blovatar_url ); ?>" id="blavatar-remove" ><?php echo esc_html_e( 'Remove Image', 'jetpack'  ); ?></a> </p>
 				
 				<?php } else { ?>
 				
-					<a href="<?php echo esc_url( $upload_blovatar_url ); ?>" id="blavatar-update" class="button"><?php echo esc_html_e( 'Add a Blavatar', 'jetpack' ); ?></a>
+					<a href="<?php echo esc_url( $upload_blovatar_url ); ?>" id="blavatar-update" class="button"><?php echo esc_html_e( 'Add a Site Image', 'jetpack' ); ?></a>
 				
 				<?php } ?>
 				
 					<div class="blavatar-info">
-					<p><?php echo esc_html_e( 'Blavatar is a term we came up with by combining Blog and Avatar. Blavatars are used in a number of ways. It will be displayed as the favicon for your blog, which shows up in a browser’s address bar and on browser tabs.', 'jetpack' ); ?>
+					<p><?php echo esc_html_e( 'Site Image or Blavatar is used to create a icon for your site or blog.', 'jetpack' ); ?>
 					</p>
 					</div>
 
@@ -194,14 +220,19 @@ class Jetpack_Blavatar {
 		<?php
 	}
 
-
+	/**
+	 * Select a file admin view
+	 * @return [type] [description]
+	 */
 	static function select_page() {
 		// show the current blavatar
+		// Delete the temporary data
+		self::delete_temporay_data();
 		// display the blavatar form to upload the image
 		 ?>
 		<form action="" method="post" enctype="multipart/form-data">
 
-			<h2><?php esc_html_e( 'Blog Icon', 'jetpack'); ?></h2>
+			<h2 class="blavatar-title"><?php esc_html_e( 'Update Site Image', 'jetpack'); ?> <span class="small"><?php esc_html_e( 'select a file', 'jetpack'); ?></span></h2>
 			<p><?php esc_html_e( 'Upload a picture to be used as your site image. We will let you crop it after you upload.', 'jetpack' ); ?></p>
 
 			
@@ -217,32 +248,76 @@ class Jetpack_Blavatar {
 		</form>
 		<?php
 	}
+	/**
+	 * This function is used to pass data to the localize scipt so that we can center the copper and also set the minimum cropper if we still want to show the 
+	 * @param  int $large_width    
+	 * @param  int $large_height   
+	 * @param  int $resized_width  
+	 * @param  int $resized_height 
+	 * @return array                 
+	 */
+	static function initial_crop_data( $large_width, $large_height, $resized_width, $resized_height ) {
+		
+		$init_x = 0;
+		$init_y = 0;
+		
+		$ration = $large_width / $resized_width;
+		$min_crop_size = ( self::$min_size / $ration );
 
+		// Landscape format ( width > height )
+		if( $resized_width > $resized_height ) {
+			$init_x = ( self::$page_crop - $resized_height ) / 2;
+			$init_size = $resized_height;
+			
+		}
 
+		// Portrate format ( height > width )
+		if( $resized_width < $resized_height ) {
+			$init_y = ( self::$page_crop - $resized_width ) / 2;
+			$init_size = $resized_height;
+		}
 
+		// Squere height == width
+		if( $resized_width = $resized_height ) {
+			$init_size = $resized_height;
+		}
+
+		return array( 
+			'init_x' => $init_x,
+			'init_y' => $init_y,
+			'init_size' => $init_size,
+			'min_size' 	=> $min_crop_size
+		);
+	}
+	/**
+	 * Crop a the image admin view
+	 */
 	static function crop_page() { 
+		if( get_option( 'blavatar_temp_data' ) ) {
 
+		}
 		// handle the uploaded image
 		$image = self::handle_file_upload( $_FILES['blavatarfile'] );
-		$crop_data = get_option( 'blavatar_temp_data' );
+
 		// display the image image croppping funcunality
 		if( is_wp_error( $image ) ) { ?>
 			<div id="message" class="updated error below-h2"><p> <?php echo esc_html( $image->get_error_message() ); ?> </p></div> 
 			<?php
 			// back to step one
 			$_POST = array();
+			self::delete_temporay_data();
 			self::select_page();
 			return;
 		}
+		
+		$crop_data = get_option( 'blavatar_temp_data' );
+		$crop_ration = $crop_data['large_image_data'][0] / $crop_data['resized_image_data'][0]; // always bigger then 1
+
 		// lets makre sure that the Javascript ia also loaded
-		wp_localize_script( 'blavatar-crop', 'Blavatar_Crop_Data', array( 
-			'init_x' => 0,
-			'init_y' => 0,
-			'init_size' => 128,
-			'min_size' 	  => 128
-		) );
+		wp_localize_script( 'blavatar-crop', 'Blavatar_Crop_Data', self::initial_crop_data( $crop_data['large_image_data'][0] , $crop_data['large_image_data'][1], $crop_data['resized_image_data'][0], $crop_data['resized_image_data'][1] ) ); 
 		?>
-		<h2><?php esc_html_e( 'Crop the image', 'jetpack' ); ?></h2>
+
+		<h2 class="blavatar-title"><?php esc_html_e( 'Update Site Image', 'jetpack'); ?> <span class="small"><?php esc_html_e( 'crop the image', 'jetpack' ); ?></span></h2>
 		<div class="blavatar-crop-shell">
 			<form action="" method="post" enctype="multipart/form-data">
 			<p><input name="submit" value="<?php esc_attr_e( 'Crop Image', 'jetpack' ); ?>" type="submit" class="button button-primary button-large" /> or <a href="#">Cancel</a> and go back to the settings.</p>
@@ -281,22 +356,118 @@ class Jetpack_Blavatar {
 		</div>
 		<?php
 	}
-
+	/**
+	 * All done page admin view
+	 * @return [type] [description]
+	 */
 	static function all_done_page() { 
 
-		$crop_data = get_option( 'blavatar_temp_data' );
-
+		$temp_image_data = get_option( 'blavatar_temp_data' );
+		if( ! $temp_image_data ) {
+			self::select_page();
+			return;
+		}
+		$crop_ration = $temp_image_data['large_image_data'][0] / $temp_image_data['resized_image_data'][0]; // always bigger then 1
 		
-		// 
-		// Delete the 2 attacments
-		// 
+		$crop_data = self::convert_coodiantes_from_resized_to_full( $_POST['crop-x'], $_POST['crop-y'], $_POST['crop-w'], $_POST['crop-h'], $crop_ration );
+	
+		$image_edit =  wp_get_image_editor( _load_image_to_edit_path( $temp_image_data['large_image_attachment_id'] ) );
+
+		if ( ! is_wp_error( $image_edit ) ) {
+			// crop the image
+			$image_edit->crop( $crop_data['crop_x'], $crop_data['crop_y'],$crop_data['crop_width'], $crop_data['crop_height'], self::$min_size, self::$min_size );
+			
+			$dir = wp_upload_dir();
+        	$blavatar_filename = $image_edit->generate_filename( 'blavatar',  $dir['path'] , 'png' );
+			$image_edit->save( $blavatar_filename );
+			
+			
+			$blavatar_id = self::save_attachment( 
+        		__( 'Large Blog Image', 'jetpack' ) , 
+        		$blavatar_filename, 
+        		'image/png'
+        	); 
+        	// Naturally sort the image sizes
+			
+			$blavatar_src_data = wp_get_attachment_image_src( $blavatar_id );
+        	$blavatar_src  = $blavatar_src_data[0];
+			$blavatar[] =  array( self::$min_size =>  $blavatar_src );
+      		
+      		self::$blavatar_sizes = apply_filters( 'blavatar_image_sizes', self::$blavatar_sizes );
+      		// use a natular sort of numbers
+			natsort( self::$blavatar_sizes ); 
+      		self::$blavatar_sizes = array_reverse ( self::$blavatar_sizes );
+
+        	foreach( self::$blavatar_sizes as $size ) {
+        		if( $size < self::$min_size ) {
+        			
+        			$image_edit->resize( $size, $size );
+        			$blavatar_file_size = substr( $blavatar_filename, 0, - strlen( 'blavatar.png') ) .'blavatar-'.$size.'.png';
+        			$blavatar_src_size  = substr( $blavatar_src, 0, - strlen( 'blavatar.png') ) .'blavatar-'.$size.'.png';
+        			$image_edit->save( $blavatar_file_size );
+        			
+        			$blavatar[] =  array( $size =>  $blavatar_src_size );
+        		}
+
+        	}
+        	$current_blvatar = get_option( 'jetpack_blavatar_data' );
+
+        	$blavatar_data = array( 'data' => $blavatar, 'attachment_id' => $blavatar_id );
+        	update_option( 'jetpack_blavatar_data', $blavatar_data );
+
+        	// Delete the temporary_data 
+        	self::delete_temporay_data();
+
+        	// Delete the previous Blavatar
+        	if( $current_blvatar ) {
+        		wp_delete_attachment( $current_blvatar['attachment_id'] , true );
+        	}
+		}
+		
 		
 		?>
-		<h1><?php echo esc_html__( 'All Done', 'jetpack' ); ?></h1>
-
-		<?php esc_html_e( 'You have successfully uploaded an Blavatar', 'jetpack' ); ?>
+		<h2 class="blavatar-title"><?php esc_html_e( 'Update Site Image', 'jetpack'); ?> <span class="small"><?php esc_html_e( 'All Done', 'jetpack' ); ?></span></h2>
+		
+		<?php echo get_blavatar( null, $size = '128' ); ?>
+		<?php echo get_blavatar( null, $size = '48' ); ?> 
+		<?php echo get_blavatar( null, $size = '16' ); ?> 
+		<p><?php esc_html_e( 'Your blavatar image has been uploaded!', 'jetpack' ); ?></p>
+		<a href="<?php echo esc_url( admin_url( 'options-general.php' ) ); ?>" ><?php esc_html_e( 'Back to General Settings' , 'jetpack' ); ?></a>
 		<?php
 	}
+	/**
+	 * Delete the temporary created data and attachments
+	 * @return [type] [description]
+	 */
+	static function delete_temporay_data() {
+		$temp_image_data = get_option( 'blavatar_temp_data' );
+
+		if( $temp_image_data ) {
+			// Delete the temporary data
+	     	delete_option( 'blavatar_temp_data' );
+	        wp_delete_attachment( $temp_image_data['large_image_attachment_id'] , true );
+	        wp_delete_attachment( $temp_image_data['resized_image_attacment_id'] , true );
+	    }
+	}
+
+	static function delete_current_avatar( $delete_data = false ) {
+		wp_delete_attachment( $current_blvatar['attachment_id'] , true );
+		if( $delete_data ) {
+
+		}
+	}
+	
+	static function convert_coodiantes_from_resized_to_full( $crop_x, $crop_y, $crop_width, $crop_height, $ratio ) {
+
+		return array(  
+			'crop_x' => floor( $crop_x * $ratio ),
+			'crop_y' => floor( $crop_y * $ratio ), 
+			'crop_width' => floor($crop_width * $ratio), 
+			'crop_height' => floor($crop_height * $ratio)
+			);
+	}
+
+
 
 	/*static function crop_blavatar( $image_id, $width, $height,   ) {
 
@@ -336,39 +507,37 @@ class Jetpack_Blavatar {
         }
 
         $image_size = getimagesize( $image['file'] );
+        
+        if( $image_size[0] < self::$min_size || $image_size[1] < self::$min_size ) {
+        	if( $image_size[0] < self::$min_size ) {
+        		return new WP_Error( 'broke', __( sprintf( "The image that you uploaded is smalled then %spx in width", self::$min_size ) , 'jetpack' ) );
+        	}
 
-        // height 
-        if( $image_size[0] >= self::$min_size && $image_size[0] >= self::$min_size ) {
-        	if( $image_size[0] > self::$min_size ){
-
+        	if( $image_size[1] < self::$min_size ) {
+        		return new WP_Error( 'broke', __( sprintf( "The image that you uploaded is smalled then %spx in height", self::$min_size ) , 'jetpack' ) );
         	}
         }
-        // Save the uploaded image as an attachment for later use
-        $attachment = array(
-            'post_mime_type' => $uploaded_file_type,
-            'post_title' 	 => __( 'Temporary Large Image for Blog Image', 'jetpack' ),
-            'post_content' 	 => '',
-            'post_status' 	 => 'inherit'
-        );
-        // Save the image as an attachment for later use. 
-        $large_attachment_id = wp_insert_attachment( $attachment, $image['file'] );
+
+     	// Save the image as an attachment for later use. 
+        $large_attachment_id = self::save_attachment( 
+        	__( 'Temporary Large Image for Blog Image', 'jetpack' ) , 
+        	$image['file'], 
+        	$uploaded_file_type 
+        ); 
         
-		// Lets resize the image so that the user is trying to resize a image that in the view
-        $image_edit->resize( 512, 512, false );
+		// Let's resize the image so that the user can easier crop a image that in the admin view 
+        $image_edit->resize( self::$page_crop, self::$page_crop, false );
         $dir = wp_upload_dir();
+        $resized_filename = $image_edit->generate_filename( 'temp',  $dir['path'] , null );
+        $image_edit->save( $resized_filename );
 
-        $filename = $image_edit->generate_filename( 'temp',  $dir['path'] , null );
-        $image_edit->save( $filename );
+       	$resized_attach_id = self::save_attachment( 
+        	__( 'Temporary Resized Image for Blog Image', 'jetpack' ) , 
+        	$resized_filename, 
+        	$uploaded_file_type 
+        ); 
 
-        $attachment = array(
-            'post_mime_type' => $uploaded_file_type,
-            'post_title' 	 => __( 'Temporary Small Image for Blog Image', 'jetpack' ),
-            'post_content' 	 => '',
-            'post_status' 	 => 'inherit'
-        );
-        // Save the image as an attachment for later use. 
-        $resized_attach_id = wp_insert_attachment( $attachment, $filename );
-        $resized_image_size = getimagesize( $filename ); 
+        $resized_image_size = getimagesize( $resized_filename ); 
         // Save all of this into the the database for that we can work with it later.
         update_option( 'blavatar_temp_data', array( 
         		'large_image_attachment_id'  => $large_attachment_id,
@@ -378,6 +547,18 @@ class Jetpack_Blavatar {
         		) );
         
         return wp_get_attachment_image_src( $resized_attach_id );
+	}
+
+
+	static function save_attachment( $title, $file_path, $file_type ) {
+		 $attachment = array(
+            'post_mime_type' => $file_type,
+            'post_title' 	 => $title,
+            'post_content' 	 => '',
+            'post_status' 	 => 'inherit'
+        );
+        // Save the image as an attachment for later use. 
+        return wp_insert_attachment( $attachment, $file_path );
 	}
 
 }
@@ -390,10 +571,11 @@ function has_blavatar( $blog_id = null ) {
 	if( ! is_int( $blog_id ) )
 		$blog_id = get_current_blog_id();
 
-	$upload_dir = wp_upload_dir();
-	return true;
+	if( blavatar_url( $blog_id, 96, '' ) ) {
+		return true;
+	}
 
-	return file_exists( $upload_dir['basedir'] . '/blavatar/blavatar-'. md5( $blog_id ) );
+	return false;
 }
 endif;
 
@@ -405,12 +587,11 @@ function get_blavatar( $blog_id = null, $size = '96', $default = '', $alt = fals
 
 	$size  = esc_attr( $size );
 	$class = "avatar avatar-$size";
-	$alt = esc_attr( $alt );
-	$src = esc_url( blavatar_url( $blog_id, 'img', $size, $default ) );
-	
+	$alt = ( $alt ? esc_attr( $alt ) : __( 'Blog Image', 'jetpack' ) );
+	$src = esc_url( blavatar_url( $blog_id, $size, $default ) );
 	$avatar = "<img alt='{$alt}' src='{$src}' class='$class' height='{$size}' width='{$size}' />";
 
-	return apply_filters( 'get_avatar', $avatar, $blog_id, $size, $default, $alt );
+	return apply_filters( 'get_blavatar', $avatar, $blog_id, $size, $default, $alt );
 }
 endif; 
 
@@ -420,9 +601,34 @@ function blavatar_url( $blog_id = null, $size = '96', $default = false ) {
 	if( ! is_int( $blog_id ) )
 		$blog_id = get_current_blog_id();
 
+	if( function_exists( 'get_blog_option' ) ) {
+		$blavatar_data = get_blog_option( $blog_id, 'jetpack_blavatar_data' );
+	} else {
+		$blavatar_data = get_option( 'jetpack_blavatar_data' );
+	}
+	
+	if( ! $blavatar_data ) {
+		if( $default === false && defined( 'BLAVATAR_DEFAULT_URL' ) )
+			$url =  BLAVATAR_DEFAULT_URL;
+		else
+			$url = $default;
+	} else {
+		$last_elm = array_shift( $blavatar_data['data'] );
+		
+		foreach( $blavatar_data['data'] as $blavatar_array ) {
+			foreach( $blavatar_array as $blavatar_size  => $blavatar_url ) {
+				
+				if( $size <= $blavatar_size )
+					$url = $blavatar_url;
+			}
+		}
+		$largest_url = array_values( $last_elm );
+		$largest_size = array_keys( $last_elm );
+		if( empty( $url ) ) { 
+			$url = $largest_url[0];
+		}
+	}
+
 	return $url;
-
 }
-endif;
-
-
+endif; 
