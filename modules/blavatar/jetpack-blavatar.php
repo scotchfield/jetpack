@@ -156,7 +156,7 @@ class Jetpack_Blavatar {
 	 */
 	function admin_init(){
 		/* regsiter the styles and scripts */
-		wp_register_style( 'blavatar-admin' , plugin_dir_url( __FILE__ ). "blavatar-admin.css", array(), $this->version );
+		wp_register_style( 'blavatar-admin' , plugin_dir_url( __FILE__ ). "css/blavatar-admin.css", array(), $this->version );
 		
 		add_settings_section(
 		  $this->module,

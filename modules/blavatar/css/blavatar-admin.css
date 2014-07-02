@@ -1,29 +1,15 @@
-.wrap{
-	position: relative;
-	z-index:1;
-}
-#screen-meta-links { 
-	position: relative;
-	z-index: 2;
-}
-.blavatar-shell{
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 315px;
-}
-@media (max-width: 1100px ) {
-	.blavatar-shell{
-		position: relative;
-		width: 100%;
-	}
-}
+/**
+ * Blavatar Module fo jetpack
+ */
+
 .blavatar-image{
-	margin: 20px auto;
-	text-align: center;
+	margin: 0 20px 0 0;
+	float: left;
 }
 .blavatar-content{
 	padding: 10px;
+	position: relative;
+	overflow: hidden;
 }
 .blavatar-crop-shell {
 	max-width: 720px;
