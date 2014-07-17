@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Jetpack by WordPress.com 3.1-beta2\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/jetpack\n"
-"POT-Creation-Date: 2014-07-17 18:52:27+00:00\n"
+"POT-Creation-Date: 2014-07-17 19:26:12+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -3040,7 +3040,7 @@ msgstr ""
 #: modules/json-api.php:41
 msgid ""
 "Allow remote management of themes, plugins, and WordPress via the JSON API. "
-"<a href=\"%s\" title=\"Learn more about JSON API\">More info</a>"
+"(<a href=\"%s\" title=\"Learn more about JSON API\">More info</a>)."
 msgstr ""
 
 #: modules/json-api.php:44 modules/minileven.php:75 modules/stats.php:573
