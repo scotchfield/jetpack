@@ -1019,7 +1019,13 @@ class Jetpack {
 
 		Jetpack::state( 'message', 'modules_activated' );
 		Jetpack::activate_default_modules( $jetpack_version, JETPACK__VERSION, $reactivate_modules );
-		wp_safe_redirect( Jetpack::admin_url( 'page=jetpack' ) );
+		
+		$page = 'jetpack'; // make sure we redirect to either settings or the jetpack page
+		if( isset( $_GET['page'] ) && in_array( $_GET['page'] , array( 'jetpack', 'jetpack_modules' ) ) ) {
+			$page = $_GET['page'];
+		}
+
+		wp_safe_redirect( Jetpack::admin_url( 'page='.$page ) );
 		exit;
 	}
 
@@ -2022,7 +2028,7 @@ p {
 				'content'	=>
 					'<p><strong>' . __( 'Jetpack by WordPress.com', 'jetpack' ) . '</strong></p>' .
 					'<p>' . __( 'Jetpack supercharges your self-hosted WordPress site with the awesome cloud power of WordPress.com.', 'jetpack' ) . '</p>' .
-					'<p>' . __( 'On this page, you are able to view the modules available within Jetpack and learn more about them.', 'jetpack' ) . '</p>',
+					'<p>' . __( 'On this page, you are able to view the modules available within Jetpack, learn more about them, and activate or deactivate them as needed.', 'jetpack' ) . '</p>',
 			)
 		);
 
@@ -2281,6 +2287,7 @@ p {
 			case 'register' :
 				check_admin_referer( 'jetpack-register' );
 				Jetpack::log( 'register' );
+				Jetpack::maybe_set_version_option();
 				$registered = Jetpack::try_registration();
 				if ( is_wp_error( $registered ) ) {
 					$error = $registered->get_error_code();
@@ -2803,7 +2810,7 @@ p {
 		$args     = wp_parse_args( $args, $defaults );
 		$base_url = apply_filters(
 			'jetpack_stats_base_url',
-			set_url_scheme( 'http://stats.wordpress.com/g.gif' )
+			set_url_scheme( 'http://pixel.wp.com/g.gif' )
 		);
 		$url      = add_query_arg( $args, $base_url );
 		return $url;
@@ -3552,12 +3559,12 @@ p {
 		add_action( 'pre_update_jetpack_option_register', array( 'Jetpack_Options', 'delete_option' ) );
 		$secrets = Jetpack::init()->generate_secrets();
 
-		Jetpack_Options::update_option( 'register', $secrets[0] . ':' . $secrets[1].
-		':' . $secrets[2] );
+		Jetpack_Options::update_option( 'register', $secrets[0] . ':' . $secrets[1] . ':' . $secrets[2] );
 
 		@list( $secret_1, $secret_2, $secret_eol ) = explode( ':', Jetpack_Options::get_option( 'register' ) );
-		if ( empty( $secret_1 ) || empty( $secret_2 ) || empty( $secret_eol ) || $secret_eol < time() )
+		if ( empty( $secret_1 ) || empty( $secret_2 ) || empty( $secret_eol ) || $secret_eol < time() ) {
 			return new Jetpack_Error( 'missing_secrets' );
+		}
 
 		$timeout = Jetpack::init()->get_remote_query_timeout_limit();
 
@@ -3607,8 +3614,6 @@ p {
 		else
 			$json = false;
 
-
-
 		if ( empty( $json->jetpack_secret ) || ! is_string( $json->jetpack_secret ) )
 			return new Jetpack_Error( 'jetpack_secret', '', $code );
 
@@ -3629,6 +3634,19 @@ p {
 		return true;
 	}
 
+	/**
+	 * If the db version is showing something other that what we've got now, bump it to current.
+	 *
+	 * @return bool: True if the option was incorrect and updated, false if nothing happened.
+	 */
+	public static function maybe_set_version_option() {
+		list( $version ) = explode( ':', Jetpack_Options::get_option( 'version' ) );
+		if ( JETPACK__VERSION != $version ) {
+			Jetpack_Options::update_option( 'version', JETPACK__VERSION . ':' . time() );
+			return true;
+		}
+		return false;
+	}
 
 /* Client Server API */
 
@@ -4050,7 +4068,7 @@ p {
 	// Make sure the POSTed request is handled by the same action
 	function preserve_action_in_login_form_for_json_api_authorization() {
 		echo "<input type='hidden' name='action' value='jetpack_json_api_authorization' />\n";
-		echo "<input type='hidden' name='jetpack_json_api_original_query' value='" . site_url( stripslashes( $_SERVER['REQUEST_URI'] ) ) . "' />\n";
+		echo "<input type='hidden' name='jetpack_json_api_original_query' value='" . esc_url( set_url_scheme( $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ) ) . "' />\n";
 	}
 
 	// If someone logs in to approve API access, store the Access Code in usermeta

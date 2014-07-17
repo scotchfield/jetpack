@@ -9,15 +9,40 @@ abstract class Jetpack_JSON_API_Endpoint extends WPCOM_JSON_API_Endpoint {
 	 * Switches to the blog and checks current user capabilities.
 	 * @return bool|WP_Error a WP_Error object or true if things are good.
 	 */
-	protected function validate_call( $_blog_id, $capability, $check_full_write = false ) {
+	protected function validate_call( $_blog_id, $capability, $check_full_management = true ) {
 		$blog_id = $this->api->switch_to_blog_and_validate_user( $this->api->get_blog_id( $_blog_id ) );
 		if ( is_wp_error( $blog_id ) )
 			return $blog_id;
 
-		if ( ! current_user_can( $capability ) ) {
-			return new WP_Error( 'unauthorized', sprintf( __( 'This user is not authorized to %s on this blog.' , 'jetpack' ), $capability ), 403 );
+		if( is_array ( $capability ) ) {
+			// the idea is that the we can pass in an array of capabilitie that the user needs to have before we allowing them to do something
+			$capabilities = ( isset( $capability['capabilities'] ) ? $capability['capabilities'] : $capability );
+			
+			// We can pass in the number of conditions we must pass by default it is all. 
+			$must_pass = ( isset( $capability['must_pass'] ) && is_int( $capability['must_pass'] ) ? $capability['must_pass'] : count( $capabilities ) );
+			
+			$failed = array(); // store the failed capabilities
+			$passed = 0; // 
+			
+			foreach( $capabilities as $cap ) {
+				if( current_user_can( $cap ) ) {
+					$passed++;
+				} else {
+					$failed[] = $cap;
+				}
+			}
+			// Check that must have conditions is less then 
+			if( $passed < $must_pass ) {
+				return new WP_Error( 'unauthorized', sprintf( __( 'This user is not authorized to %s on this blog.' , 'jetpack' ), implode( ', ', $failed ), 403 ) );
+			}
+
+		} else {
+			if ( ! current_user_can( $capability ) ) {
+				return new WP_Error( 'unauthorized', sprintf( __( 'This user is not authorized to %s on this blog.' , 'jetpack' ), $capability ), 403 );
+			}
 		}
-		if ( $check_full_write && ! Jetpack_Options::get_option( 'json_api_full_management' ) ) {
+		
+		if ( $check_full_management && ! Jetpack_Options::get_option( 'json_api_full_management' ) ) {
 			return new WP_Error( 'unauthorized_full_access', sprintf( __( 'Full management mode is off for this site.' , 'jetpack' ), $capability ), 403 );
 		}
 		return true;
@@ -49,7 +74,7 @@ abstract class Jetpack_JSON_API_Themes_Endpoint extends Jetpack_JSON_API_Endpoin
 
 		$formatted_theme = array(
 			'id'          => $theme->get_stylesheet(),
-			'screenshot'  => jetpack_photon_url( $theme->get_screenshot() )
+			'screenshot'  => jetpack_photon_url( $theme->get_screenshot(), array(), 'network_path' )
 		);
 
 		foreach( $fields as $key => $field )
@@ -97,7 +122,7 @@ class Jetpack_JSON_API_Active_Theme_Endpoint extends Jetpack_JSON_API_Themes_End
 	// POST /sites/%s/themes/mine => switch theme
 	public function callback( $path = '', $blog_id = 0  ) {
 
-		if ( is_wp_error( $error = $this->validate_call( $blog_id, 'switch_themes' ) ) ) {
+		if ( is_wp_error( $error = $this->validate_call( $blog_id, 'switch_themes', true ) ) ) {
 			return $error;
 		}
 
@@ -126,6 +151,10 @@ class Jetpack_JSON_API_Active_Theme_Endpoint extends Jetpack_JSON_API_Themes_End
 			return new WP_Error( 'theme_not_found', __( 'The specified theme was not found.', 'jetpack' ), 404 );
 		}
 
+		if ( ! $theme->is_allowed() ) {
+			return new WP_Error( 'theme_not_found', __( 'You are not allowed to switch to this theme', 'jetpack' ), 403 );
+		}
+		
 		switch_theme( $theme_slug );
 
 		return $this->get_current_theme();
@@ -207,14 +236,11 @@ class Jetpack_JSON_API_List_Themes_Endpoint extends Jetpack_JSON_API_Themes_Endp
 		if ( is_wp_error( $check ) )
 			return $check;
 
-		if ( is_wp_error( $error = $this->validate_call( $blog_id, 'update_themes' ) ) ) {
+		if ( is_wp_error( $error = $this->validate_call( $blog_id, 'update_themes', false ) ) ) {
 			return $error;
 		}
 
-		$args = $this->query_args();
-		$themes = wp_get_themes( array(
-			'sort' => $args['sort']
-		) );
+		$themes = wp_get_themes( array( 'allowed' => true ) );
 
 		$response = array();
 		foreach( $this->response_format as $key => $val ) {
@@ -239,11 +265,6 @@ new Jetpack_JSON_API_List_Themes_Endpoint( array(
 	'path'            => '/sites/%s/themes',
 	'path_labels' => array(
 		'$site' => '(int|string) The site ID, The site domain'
-	),
-	'query_parameters' => array(
-		'sort'   => '(string=trending) Sort themes by trending, newest, or popular',
-		'limit'  => '(int=0) Limit the number of themes returned. 0 for no limits.',
-		'offset' => '(int=0) 0-indexed offset. Useful for pagination.'
 	),
 	'response_format' => array(
 		'found'  => '(int) The total number of themes found.',
@@ -300,13 +321,13 @@ abstract class Jetpack_JSON_API_Plugins_Endpoint extends Jetpack_JSON_API_Endpoi
 	protected static function get_plugin( $plugin_file ) {
 		$installed_plugins = get_plugins();
 		if ( ! isset( $installed_plugins[ $plugin_file] ) )
-			return new WP_Error( 'unknown_plugin', __( 'Plugin not found.', 'jetpack' ) );
+			return new WP_Error( 'unknown_plugin', __( 'Plugin not found.', 'jetpack' ), 404 );
 		return self::format_plugin( $plugin_file, $installed_plugins[ $plugin_file] );
 	}
 
 	protected function validate_plugin( $plugin_file ) {
 		if ( is_wp_error( $error = validate_plugin( $plugin_file ) ) ) {
-			return new WP_Error( 'unknown_plugin', $error->get_error_messages(), 404 );
+			return new WP_Error( 'unknown_plugin', $error->get_error_messages(), 500 );
 		}
 
 		$args = $this->input();
@@ -326,7 +347,7 @@ abstract class Jetpack_JSON_API_Plugins_Endpoint extends Jetpack_JSON_API_Endpoi
 class Jetpack_JSON_API_Activate_Plugin_Endpoint extends Jetpack_JSON_API_Plugins_Endpoint {
 	// POST  /sites/%s/plugins/%s/activate => activate_plugin
 	public function callback( $path = '', $blog_id = 0, $plugin_slug = '' ) {
-		if ( is_wp_error( $error = $this->validate_call( $blog_id, 'activate_plugins' ) ) ) {
+		if ( is_wp_error( $error = $this->validate_call( $blog_id, 'activate_plugins', true ) ) ) {
 			return $error;
 		}
 
@@ -341,13 +362,13 @@ class Jetpack_JSON_API_Activate_Plugin_Endpoint extends Jetpack_JSON_API_Plugins
 	protected function activate_plugin( $plugin_file ) {
 
 		if ( ( ! $this->network_wide && Jetpack::is_plugin_active( $plugin_file ) ) || is_plugin_active_for_network( $plugin_file ) ) {
-			return new WP_Error( 'plugin_active', __( 'The Plugin is already active.', 'jetpack' ), 404 );
+			return new WP_Error( 'plugin_active', __( 'The Plugin is already active.', 'jetpack' ), 400 );
 		}
 
 		$result = activate_plugin( $plugin_file, '', $this->network_wide );
 
 		if ( is_wp_error( $result ) ) {
-			return new WP_Error( 'activation_error', $result->get_error_messages(), 404 );
+			return new WP_Error( 'activation_error', $result->get_error_messages(), 500 );
 		}
 
 		$success = Jetpack::is_plugin_active( $plugin_file );
@@ -356,7 +377,7 @@ class Jetpack_JSON_API_Activate_Plugin_Endpoint extends Jetpack_JSON_API_Plugins
 		}
 
 		if ( ! $success ) {
-			return new WP_Error( 'activation_error', $result->get_error_messages(), 404 );
+			return new WP_Error( 'activation_error', $result->get_error_messages(), 500 );
 		}
 
 		$result = self::get_plugin( $plugin_file );
@@ -390,7 +411,7 @@ new Jetpack_JSON_API_Activate_Plugin_Endpoint( array(
 class Jetpack_JSON_API_Deactivate_Plugin_Endpoint extends Jetpack_JSON_API_Plugins_Endpoint {
 	// POST  /sites/%s/plugins/%s/deactivate => deactivate_plugin
 	public function callback( $path = '', $blog_id = 0, $plugin_slug = '' ) {
-		if ( is_wp_error( $error = $this->validate_call( $blog_id, 'activate_plugins' ) ) ) {
+		if ( is_wp_error( $error = $this->validate_call( $blog_id, 'activate_plugins', true ) ) ) {
 			return $error;
 		}
 
@@ -405,13 +426,13 @@ class Jetpack_JSON_API_Deactivate_Plugin_Endpoint extends Jetpack_JSON_API_Plugi
 	protected function deactivate_plugin( $plugin_file ) {
 
 		if ( ! Jetpack::is_plugin_active( $plugin_file ) ) {
-			return new WP_Error( 'plugin_active', __( 'The Plugin is already deactivated.', 'jetpack' ), 404 );
+			return new WP_Error( 'plugin_active', __( 'The Plugin is already deactivated.', 'jetpack' ), 400 );
 		}
 
 		$result = deactivate_plugins( $plugin_file, false, $this->network_wide );
 
 		if ( is_wp_error( $result ) ) {
-			return new WP_Error( 'deactivation_error', $result->get_error_messages(), 404 );
+			return new WP_Error( 'deactivation_error', $result->get_error_messages(), 500 );
 		}
 
 		$success = ! Jetpack::is_plugin_active( $plugin_file );
@@ -420,7 +441,7 @@ class Jetpack_JSON_API_Deactivate_Plugin_Endpoint extends Jetpack_JSON_API_Plugi
 		}
 
 		if ( ! $success ) {
-			return new WP_Error( 'deactivation_error', $result->get_error_messages(), 404 );
+			return new WP_Error( 'deactivation_error', $result->get_error_messages(), 500 );
 		}
 
 		$result = self::get_plugin( $plugin_file );
@@ -455,7 +476,7 @@ class Jetpack_JSON_API_List_Plugins_Endpoint extends Jetpack_JSON_API_Plugins_En
 
 	// /sites/%s/plugins
 	public function callback( $path = '', $_blog_id = 0 ) {
-		if ( is_wp_error( $error = $this->validate_call( $_blog_id, 'update_plugins' ) ) ) {
+		if ( is_wp_error( $error = $this->validate_call( $_blog_id, 'update_plugins', false ) ) ) {
 			return $error;
 		}
 
@@ -514,7 +535,7 @@ abstract class Jetpack_JSON_API_Jetpack_Modules_Endpoint extends Jetpack_JSON_AP
 
 	protected static function get_module( $module_slug ) {
 		if ( ! Jetpack::is_module( $module_slug ) )
-			return new WP_Error( 'unknown_jetpack_module', sprintf( __( 'Module not found: `%s`.', 'jetpack' ), $module_slug ) );
+			return new WP_Error( 'unknown_jetpack_module', sprintf( __( 'Module not found: `%s`.', 'jetpack' ), $module_slug ), 404 );
 		return self::format_module( $module_slug );
 	}
 }
@@ -523,11 +544,11 @@ abstract class Jetpack_JSON_API_Jetpack_Modules_Endpoint extends Jetpack_JSON_AP
 class Jetpack_JSON_API_Activate_Module_Endpoint extends Jetpack_JSON_API_Jetpack_Modules_Endpoint {
 	// POST  /sites/%s/jetpack/modules/%s/activate => activate_module
 	public function callback( $path = '', $blog_id = 0, $module_slug = '' ) {
-		if ( is_wp_error( $error = $this->validate_call( $blog_id, 'jetpack_manage_modules' ) ) ) {
+		if ( is_wp_error( $error = $this->validate_call( $blog_id, 'jetpack_manage_modules', true ) ) ) {
 			return $error;
 		}
 		if ( ! Jetpack::is_module( $module_slug ) ) {
-			return new WP_Error( 'unknown_jetpack_module', sprintf( __( 'Module not found: `%s`.', 'jetpack' ), $module_slug ) );
+			return new WP_Error( 'unknown_jetpack_module', sprintf( __( 'Module not found: `%s`.', 'jetpack' ), $module_slug ), 404 );
 		}
 		return $this->activate_module( $module_slug );
 	}
@@ -535,18 +556,18 @@ class Jetpack_JSON_API_Activate_Module_Endpoint extends Jetpack_JSON_API_Jetpack
 	protected function activate_module( $module_slug ) {
 
 		if ( Jetpack::is_module_active( $module_slug ) ) {
-			return new WP_Error( 'jetpack_module_already_active', __( 'The Module is already active.', 'jetpack' ), 404 );
+			return new WP_Error( 'jetpack_module_already_active', __( 'The Module is already active.', 'jetpack' ), 400 );
 		}
 
 		$result = Jetpack::activate_module( $module_slug, false, false );
 
 		// TODO return WP_Error instead of bool in order to forward the error message.
 		if ( false === $result ) {
-			return new WP_Error( 'activation_error', sprintf( __( 'There was an error while activating the module `%s`.', 'jetpack' ), $module_slug ), 404 );
+			return new WP_Error( 'activation_error', sprintf( __( 'There was an error while activating the module `%s`.', 'jetpack' ), $module_slug ), 500 );
 		}
 
 		if ( ! Jetpack::is_module_active( $module_slug ) ) {
-			return new WP_Error( 'activation_error', $result->get_error_messages(), 404 );
+			return new WP_Error( 'activation_error', $result->get_error_messages(), 500 );
 		}
 
 		$response['module'] = self::get_module( $module_slug );
@@ -582,11 +603,11 @@ new Jetpack_JSON_API_Activate_Module_Endpoint( array(
 class Jetpack_JSON_API_Deactivate_Module_Endpoint extends Jetpack_JSON_API_Jetpack_Modules_Endpoint {
 	// POST  /sites/%s/jetpack/modules/%s/deactivate => deactivate_module
 	public function callback( $path = '', $blog_id = 0, $module_slug = '' ) {
-		if ( is_wp_error( $error = $this->validate_call( $blog_id, 'jetpack_manage_modules' ) ) ) {
+		if ( is_wp_error( $error = $this->validate_call( $blog_id, 'jetpack_manage_modules', true ) ) ) {
 			return $error;
 		}
 		if ( ! Jetpack::is_module( $module_slug ) ) {
-			return new WP_Error( 'unknown_jetpack_module', sprintf( __( 'Module not found: `%s`.', 'jetpack' ), $module_slug ) );
+			return new WP_Error( 'unknown_jetpack_module', sprintf( __( 'Module not found: `%s`.', 'jetpack' ), $module_slug ), 404 );
 		}
 		return $this->deactivate_module( $module_slug );
 	}
@@ -594,17 +615,17 @@ class Jetpack_JSON_API_Deactivate_Module_Endpoint extends Jetpack_JSON_API_Jetpa
 	protected function deactivate_module( $module_slug ) {
 
 		if ( ! Jetpack::is_module_active( $module_slug ) ) {
-			return new WP_Error( 'jetpack_module_already_deactivated', __( 'The Jetpack Module is already deactivated.', 'jetpack' ), 404 );
+			return new WP_Error( 'jetpack_module_already_deactivated', __( 'The Jetpack Module is already deactivated.', 'jetpack' ), 400 );
 		}
 
 		$result = Jetpack::deactivate_module( $module_slug );
 
 		if ( false === $result ) {
-			return new WP_Error( 'deactivation_error', sprintf( __( 'There was an error while deactivating the module `%s`.', 'jetpack' ), $module_slug ), 404 );
+			return new WP_Error( 'deactivation_error', sprintf( __( 'There was an error while deactivating the module `%s`.', 'jetpack' ), $module_slug ), 500 );
 		}
 
 		if ( Jetpack::is_module_active( $module_slug ) ) {
-			return new WP_Error( 'deactivation_error', sprintf( __( 'There was an error while deactivating the module `%s`.', 'jetpack' ), $module_slug ), 404 );
+			return new WP_Error( 'deactivation_error', sprintf( __( 'There was an error while deactivating the module `%s`.', 'jetpack' ), $module_slug ), 500 );
 		}
 
 		$response['module'] = self::get_module( $module_slug );
@@ -642,7 +663,7 @@ class Jetpack_JSON_API_List_Modules_Endpoint extends Jetpack_JSON_API_Jetpack_Mo
 	// /sites/%s/jetpack/modules
 	public function callback( $path = '', $_blog_id = 0 ) {
 
-		if ( is_wp_error( $error = $this->validate_call( $_blog_id, 'jetpack_manage_modules' ) ) ) {
+		if ( is_wp_error( $error = $this->validate_call( $_blog_id, 'jetpack_manage_modules', false ) ) ) {
 			return $error;
 		}
 
@@ -684,12 +705,22 @@ class Jetpack_JSON_API_GET_Update_Data extends Jetpack_JSON_API_Endpoint {
 
 	// GET /sites/%s/updates
 	public function callback( $path = '', $_blog_id = 0 ) {
-		if ( is_wp_error( $error = $this->validate_call( $_blog_id, 'manage_options' ) ) ) {
+
+		$error = $this->validate_call( $_blog_id, array(
+													'must_pass'    => 1, // must meet at least one condition
+													'capabilities' => array( 
+														'update_plugins',
+														'update_themes', 
+														'update_core'
+													)
+												  ), false );
+
+		if ( is_wp_error( $error ) ) {
 			return $error;
 		}
 		$update_data = wp_get_update_data();
 		if ( !  isset( $update_data['counts'] ) ) {
-			return new WP_Error( 'get_update_data_error', __( 'There was an error while getting the update data for this site.', 'jetpack' ), 404 );
+			return new WP_Error( 'get_update_data_error', __( 'There was an error while getting the update data for this site.', 'jetpack' ), 500 );
 		}
 		return $update_data['counts'];
 	}
@@ -741,7 +772,9 @@ class Jetpack_JSON_API_Update_Plugin_Endpoint extends Jetpack_JSON_API_Plugins_E
 
 		// clear cache
 		wp_clean_plugins_cache();
+		ob_start();
 		wp_update_plugins(); // Check for Plugin updates
+		ob_end_clean();
 
 		$skin = new Automatic_Upgrader_Skin();
 		// The Automatic_Upgrader_Skin skin shouldn't output anything.
@@ -753,10 +786,16 @@ class Jetpack_JSON_API_Update_Plugin_Endpoint extends Jetpack_JSON_API_Plugins_E
 		remove_action( 'upgrader_process_complete', 'wp_version_check' );
 		remove_action( 'upgrader_process_complete', 'wp_update_themes' );
 
+		ob_start();
 		$result = $upgrader->upgrade( $plugin_file );
+		$output = ob_get_contents();
+		ob_end_clean();
 
-		if ( ! $result ) {
-			return new WP_Error( 'plugin_up_to_date', __( 'The Plugin is already up to date.', 'jetpack' ), 404 );
+		if ( false === $result ) {
+			return new WP_Error( 'plugin_up_to_date', __( 'The Plugin is already up to date.', 'jetpack' ), 400 );
+		}
+		if ( empty( $result ) && ! empty( $output ) ) {
+			return new WP_Error( 'unknown_error', __( 'There was an error while trying to upgrade.', 'jetpack' ), 500 );
 		}
 		if ( is_wp_error( $result) ) {
 			return $result;
