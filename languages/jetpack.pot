@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the Jetpack by WordPress.com package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Jetpack by WordPress.com 3.1-beta1\n"
+"Project-Id-Version: Jetpack by WordPress.com 3.1-beta2\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/jetpack\n"
-"POT-Creation-Date: 2014-07-09 19:37:19+00:00\n"
+"POT-Creation-Date: 2014-07-17 18:52:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,7 +36,7 @@ msgstr ""
 msgid "Test your site&#8217;s compatibility with Jetpack."
 msgstr ""
 
-#: _inc/footer.php:30 class.jetpack.php:3096
+#: _inc/footer.php:30 class.jetpack.php:3103
 #: views/admin/network-admin-footer.php:21
 msgid "Debug"
 msgstr ""
@@ -45,7 +45,7 @@ msgstr ""
 msgid "Contact the Jetpack Happiness Squad."
 msgstr ""
 
-#: _inc/footer.php:31 class.jetpack.php:3098
+#: _inc/footer.php:31 class.jetpack.php:3105
 #: modules/sharedaddy/sharedaddy.php:87
 #: views/admin/network-admin-footer.php:23
 msgid "Support"
@@ -59,7 +59,7 @@ msgstr ""
 msgid "Give Us Feedback"
 msgstr ""
 
-#: _inc/footer.php:35 class.jetpack.php:2946
+#: _inc/footer.php:35 class.jetpack.php:2953
 msgid "Disconnect from WordPress.com"
 msgstr ""
 
@@ -67,24 +67,23 @@ msgstr ""
 msgid "Unlink your user account"
 msgstr ""
 
-#: _inc/footer.php:50 class.jetpack.php:2142 modules/module-info.php:44
+#: _inc/footer.php:50 class.jetpack.php:2148 modules/module-info.php:44
 #: modules/module-info.php:78 modules/module-info.php:143
 #: modules/module-info.php:176 modules/module-info.php:208
 #: modules/module-info.php:237 modules/module-info.php:268
 #: modules/module-info.php:302 modules/module-info.php:351
-#: modules/module-info.php:371 modules/module-info.php:410
-#: modules/module-info.php:434 modules/module-info.php:450
-#: modules/module-info.php:467 modules/module-info.php:473
-#: modules/module-info.php:498 modules/module-info.php:527
-#: modules/module-info.php:559 modules/module-info.php:580
-#: modules/module-info.php:629 modules/module-info.php:655
-#: modules/module-info.php:681 modules/module-info.php:700
-#: modules/module-info.php:724 modules/module-info.php:748
-#: modules/module-info.php:769 modules/module-info.php:786
-#: modules/module-info.php:802 modules/module-info.php:817
-#: modules/module-info.php:836 modules/module-info.php:889
-#: modules/module-info.php:903 modules/module-info.php:917
-#: modules/widgets/readmill.php:27
+#: modules/module-info.php:371 modules/module-info.php:409
+#: modules/module-info.php:433 modules/module-info.php:449
+#: modules/module-info.php:466 modules/module-info.php:472
+#: modules/module-info.php:497 modules/module-info.php:526
+#: modules/module-info.php:558 modules/module-info.php:579
+#: modules/module-info.php:628 modules/module-info.php:654
+#: modules/module-info.php:680 modules/module-info.php:699
+#: modules/module-info.php:723 modules/module-info.php:747
+#: modules/module-info.php:768 modules/module-info.php:785
+#: modules/module-info.php:801 modules/module-info.php:816
+#: modules/module-info.php:835 modules/module-info.php:888
+#: modules/module-info.php:902 modules/module-info.php:916
 msgid "Learn More"
 msgstr ""
 
@@ -93,16 +92,16 @@ msgid "Config"
 msgstr ""
 
 #: _inc/header.php:8 class.jetpack-network.php:198
-#: class.jetpack-network.php:260 class.jetpack.php:1861
+#: class.jetpack-network.php:260 class.jetpack.php:1867
 msgid "Jetpack"
 msgstr ""
 
-#: _inc/header.php:10 class.jetpack.php:2021
+#: _inc/header.php:10 class.jetpack.php:2027
 msgid "Home"
 msgstr ""
 
 #: _inc/header.php:14 _inc/lib/admin-pages/class.jetpack-settings-page.php:13
-#: class.jetpack-network.php:262 class.jetpack.php:2034 class.jetpack.php:2117
+#: class.jetpack-network.php:262 class.jetpack.php:2040 class.jetpack.php:2123
 #: modules/publicize/ui.php:686 modules/sharedaddy/sharedaddy.php:79
 #: modules/sharedaddy/sharedaddy.php:86
 msgid "Settings"
@@ -114,7 +113,7 @@ msgid "Jetpack"
 msgstr ""
 
 #: _inc/lib/admin-pages/class.jetpack-landing-page.php:29
-#: class.jetpack.php:1858
+#: class.jetpack.php:1864
 msgid "One New Jetpack Module"
 msgid_plural "%s New Jetpack Modules"
 msgstr[0] ""
@@ -125,34 +124,34 @@ msgctxt "The menu item label with a new module count as %s"
 msgid "Jetpack %s"
 msgstr ""
 
-#: _inc/lib/admin-pages/class.jetpack-landing-page.php:107
+#: _inc/lib/admin-pages/class.jetpack-landing-page.php:109
 msgid "Error, bad module."
 msgstr ""
 
-#: _inc/lib/admin-pages/class.jetpack-landing-page.php:121
+#: _inc/lib/admin-pages/class.jetpack-landing-page.php:123
 msgid ""
 "This will deactivate all Jetpack modules.\n"
 "Are you sure you want to disconnect?"
 msgstr ""
 
-#: _inc/lib/admin-pages/class.jetpack-landing-page.php:122
+#: _inc/lib/admin-pages/class.jetpack-landing-page.php:124
 msgid ""
 "This will prevent user-specific modules such as Publicize, Notifications and "
 "Post By Email from working.\n"
 "Are you sure you want to unlink?"
 msgstr ""
 
-#: _inc/lib/admin-pages/class.jetpack-landing-page.php:123
+#: _inc/lib/admin-pages/class.jetpack-landing-page.php:125
 msgid ""
 "This will deactivate Jetpack.\n"
 "Are you sure you want to deactivate Jetpack?"
 msgstr ""
 
-#: _inc/lib/admin-pages/class.jetpack-landing-page.php:124
+#: _inc/lib/admin-pages/class.jetpack-landing-page.php:126
 msgid "View all Jetpack features"
 msgstr ""
 
-#: _inc/lib/admin-pages/class.jetpack-landing-page.php:125
+#: _inc/lib/admin-pages/class.jetpack-landing-page.php:127
 msgid "Sorry, no modules were found for the search term \"%s\""
 msgstr ""
 
@@ -222,14 +221,14 @@ msgstr ""
 msgid "%1$s &ndash; %2$s"
 msgstr ""
 
-#: class.jetpack-admin.php:93 class.jetpack.php:3258 modules/stats.php:351
+#: class.jetpack-admin.php:93 class.jetpack.php:3265 modules/stats.php:351
 #: views/admin/landing-page-templates.php:24
 #: views/admin/module-modal-template.php:20
 msgid "Configure"
 msgstr ""
 
-#: class.jetpack-admin.php:161 class.jetpack-debugger.php:98
-#: class.jetpack.php:1866 class.jetpack.php:2052
+#: class.jetpack-admin.php:165 class.jetpack-debugger.php:98
+#: class.jetpack.php:1872 class.jetpack.php:2058
 msgid "Jetpack Debugging Center"
 msgstr ""
 
@@ -310,8 +309,8 @@ msgstr ""
 msgid "You need to register your Jetpack before connecting it."
 msgstr ""
 
-#: class.jetpack-client-server.php:184 class.jetpack.php:3527
-#: class.jetpack.php:3529 class.jetpack.php:3531 class.jetpack.php:3534
+#: class.jetpack-client-server.php:184 class.jetpack.php:3534
+#: class.jetpack.php:3536 class.jetpack.php:3538 class.jetpack.php:3541
 msgid "Error Details: %s"
 msgstr ""
 
@@ -477,14 +476,14 @@ msgstr ""
 
 #: class.jetpack-modules-list-table.php:74
 #: class.jetpack-modules-list-table.php:179
-#: class.jetpack-modules-list-table.php:252 class.jetpack.php:3186
+#: class.jetpack-modules-list-table.php:252 class.jetpack.php:3193
 #: views/admin/module-modal-template.php:14
 msgid "Deactivate"
 msgstr ""
 
 #: class.jetpack-modules-list-table.php:76
 #: class.jetpack-modules-list-table.php:178
-#: class.jetpack-modules-list-table.php:242 class.jetpack.php:3199
+#: class.jetpack-modules-list-table.php:242 class.jetpack.php:3206
 #: views/admin/module-modal-template.php:16
 msgid "Activate"
 msgstr ""
@@ -511,8 +510,8 @@ msgid "Connected"
 msgstr ""
 
 #: class.jetpack-network-sites-list-table.php:55
-#: modules/custom-css/custom-css.php:739 modules/custom-css/custom-css.php:834
-#: modules/custom-css/custom-css.php:864 modules/minileven/minileven.php:262
+#: modules/custom-css/custom-css.php:740 modules/custom-css/custom-css.php:835
+#: modules/custom-css/custom-css.php:865 modules/minileven/minileven.php:262
 #: modules/minileven/theme/pub/minileven/content-gallery.php:74
 #: modules/minileven/theme/pub/minileven/content.php:53
 #: modules/minileven/theme/pub/minileven/image.php:82
@@ -529,28 +528,28 @@ msgstr ""
 msgid "Sites"
 msgstr ""
 
-#: class.jetpack-sync.php:766 class.jetpack-sync.php:770
-#: class.jetpack-sync.php:778 class.jetpack-sync.php:800
+#: class.jetpack-sync.php:769 class.jetpack-sync.php:773
+#: class.jetpack-sync.php:781 class.jetpack-sync.php:803
 msgid "Refresh Status"
 msgstr ""
 
-#: class.jetpack-sync.php:767
+#: class.jetpack-sync.php:770
 msgid "Indexing request queued and waiting&hellip;"
 msgstr ""
 
-#: class.jetpack-sync.php:771
+#: class.jetpack-sync.php:774
 msgid "Indexing posts"
 msgstr ""
 
-#: class.jetpack-sync.php:774
+#: class.jetpack-sync.php:777
 msgid "Reindex Posts"
 msgstr ""
 
-#: class.jetpack-sync.php:775
+#: class.jetpack-sync.php:778
 msgid "Posts indexed."
 msgstr ""
 
-#: class.jetpack-sync.php:779
+#: class.jetpack-sync.php:782
 msgid "Status unknown."
 msgstr ""
 
@@ -595,271 +594,271 @@ msgstr ""
 msgid "The Twitter username of the owner of this site's domain."
 msgstr ""
 
-#: class.jetpack.php:1243
+#: class.jetpack.php:1249
 msgctxt "Module Tag"
 msgid "Photos and Videos"
 msgstr ""
 
-#: class.jetpack.php:1244
+#: class.jetpack.php:1250
 msgctxt "Module Tag"
 msgid "Social"
 msgstr ""
 
-#: class.jetpack.php:1245
+#: class.jetpack.php:1251
 msgctxt "Module Tag"
 msgid "WordPress.com Stats"
 msgstr ""
 
-#: class.jetpack.php:1246
+#: class.jetpack.php:1252
 msgctxt "Module Tag"
 msgid "Writing"
 msgstr ""
 
-#: class.jetpack.php:1247
+#: class.jetpack.php:1253
 msgctxt "Module Tag"
 msgid "Appearance"
 msgstr ""
 
-#: class.jetpack.php:1248
+#: class.jetpack.php:1254
 msgctxt "Module Tag"
 msgid "Developers"
 msgstr ""
 
-#: class.jetpack.php:1249
+#: class.jetpack.php:1255
 msgctxt "Module Tag"
 msgid "Mobile"
 msgstr ""
 
-#: class.jetpack.php:1250
+#: class.jetpack.php:1256
 msgctxt "Module Tag"
 msgid "Other"
 msgstr ""
 
-#: class.jetpack.php:1563
+#: class.jetpack.php:1569
 msgid "Jetpack requires WordPress version %s or later."
 msgstr ""
 
-#: class.jetpack.php:1821 class.jetpack.php:1837
+#: class.jetpack.php:1827 class.jetpack.php:1843
 msgid ""
 "Jetpack contains the most recent version of the old &#8220;%1$s&#8221; "
 "plugin."
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: class.jetpack.php:2023 class.jetpack.php:2036 class.jetpack.php:2956
-#: class.jetpack.php:3126 views/admin/network-admin-header.php:5
+#: class.jetpack.php:2029 class.jetpack.php:2042 class.jetpack.php:2963
+#: class.jetpack.php:3133 views/admin/network-admin-header.php:5
 msgid "Jetpack by WordPress.com"
 msgstr ""
 
-#: class.jetpack.php:2024 class.jetpack.php:2959
+#: class.jetpack.php:2030 class.jetpack.php:2966
 msgid ""
 "Jetpack supercharges your self-hosted WordPress site with the awesome cloud "
 "power of WordPress.com."
 msgstr ""
 
-#: class.jetpack.php:2025
+#: class.jetpack.php:2031
 msgid ""
-"On this page, you are able to view the modules available within Jetpack and "
-"learn more about them."
+"On this page, you are able to view the modules available within Jetpack, "
+"learn more about them, and activate or deactivate them as needed."
 msgstr ""
 
-#: class.jetpack.php:2037
+#: class.jetpack.php:2043
 msgid ""
 "You can activate or deactivate individual Jetpack modules to suit your needs."
 msgstr ""
 
-#: class.jetpack.php:2039
+#: class.jetpack.php:2045
 msgid ""
 "Each module has an Activate or Deactivate link so you can toggle one "
 "individually."
 msgstr ""
 
-#: class.jetpack.php:2040
+#: class.jetpack.php:2046
 msgid ""
 "Using the checkboxes next to each module, you can select multiple modules to "
 "toggle via the Bulk Actions menu at the top of the list."
 msgstr ""
 
-#: class.jetpack.php:2042
+#: class.jetpack.php:2048
 msgid ""
 "Using the tools on the right, you can search for specific modules, filter by "
 "module categories or which are active, or change the sorting order."
 msgstr ""
 
-#: class.jetpack.php:2049
+#: class.jetpack.php:2055
 msgid "For more information:"
 msgstr ""
 
-#: class.jetpack.php:2050
+#: class.jetpack.php:2056
 msgid "Jetpack FAQ"
 msgstr ""
 
-#: class.jetpack.php:2051
+#: class.jetpack.php:2057
 msgid "Jetpack Support"
 msgstr ""
 
-#: class.jetpack.php:2135
+#: class.jetpack.php:2141
 msgid "Dismiss this notice and deactivate Jetpack."
 msgstr ""
 
-#: class.jetpack.php:2140 class.jetpack.php:3001
+#: class.jetpack.php:2146 class.jetpack.php:3008
 #: views/admin/must-connect-main-blog.php:11
 msgid "Connect to WordPress.com"
 msgstr ""
 
-#: class.jetpack.php:2147
+#: class.jetpack.php:2153
 msgid "<strong>Your Jetpack is almost ready!</strong>"
 msgstr ""
 
-#: class.jetpack.php:2148
+#: class.jetpack.php:2154
 msgid "Connect now to enable features like Stats, Likes, and Social Sharing."
 msgstr ""
 
-#: class.jetpack.php:2150
+#: class.jetpack.php:2156
 msgid "<strong>Jetpack is installed</strong>"
 msgstr ""
 
-#: class.jetpack.php:2151
+#: class.jetpack.php:2157
 msgid ""
 "It's ready to bring awesome, WordPress.com cloud-powered features to your "
 "site."
 msgstr ""
 
-#: class.jetpack.php:2164
+#: class.jetpack.php:2170
 msgid ""
 "<strong>Jetpack is activated!</strong> Each site on your network must be "
 "connected individually by an admin on that site."
 msgstr ""
 
-#: class.jetpack.php:2191
+#: class.jetpack.php:2197
 msgid ""
 "Jetpack now includes Jetpack Comments, which enables your visitors to use "
 "their WordPress.com, Twitter, or Facebook accounts when commenting on your "
 "site. To activate Jetpack Comments, <a href=\"%s\">%s</a>."
 msgstr ""
 
-#: class.jetpack.php:2202
+#: class.jetpack.php:2208
 msgid "click here"
 msgstr ""
 
-#: class.jetpack.php:2372
+#: class.jetpack.php:2379
 msgid "Cheatin&#8217; uh?"
 msgstr ""
 
-#: class.jetpack.php:2375
+#: class.jetpack.php:2382
 msgid ""
 "You need to authorize the Jetpack connection between your site and WordPress."
 "com to enable the awesome features."
 msgstr ""
 
-#: class.jetpack.php:2378
+#: class.jetpack.php:2385
 msgid ""
 "Don&#8217;t cross the streams!  You need to stay logged in to your WordPress "
 "blog while you authorize Jetpack."
 msgstr ""
 
-#: class.jetpack.php:2382
+#: class.jetpack.php:2389
 msgid ""
 "Return to sender.  Whoops! It looks like you got the wrong Jetpack in the "
 "mail; deactivate then reactivate the Jetpack plugin to get a new one."
 msgstr ""
 
-#: class.jetpack.php:2385
+#: class.jetpack.php:2392
 msgid ""
 "Wrong size.  Hm&#8230; it seems your Jetpack doesn&#8217;t quite fit.  Have "
 "you lost weight? Click &#8220;Connect to WordPress.com&#8221; again to get "
 "your Jetpack adjusted."
 msgstr ""
 
-#: class.jetpack.php:2389
+#: class.jetpack.php:2396
 msgid "Your website needs to be publicly accessible to use Jetpack: %s"
 msgstr ""
 
-#: class.jetpack.php:2394
+#: class.jetpack.php:2401
 msgid ""
 "%s could not be activated because it triggered a <strong>fatal error</"
 "strong>. Perhaps there is a conflict with another plugin you have installed?"
 msgstr ""
 
-#: class.jetpack.php:2396
+#: class.jetpack.php:2403
 msgid "Do you still have the %s plugin installed?"
 msgstr ""
 
-#: class.jetpack.php:2399
+#: class.jetpack.php:2406
 msgid ""
 "Module could not be activated because it triggered a <strong>fatal error</"
 "strong>. Perhaps there is a conflict with another plugin you have installed?"
 msgstr ""
 
-#: class.jetpack.php:2417
+#: class.jetpack.php:2424
 msgid "%s was not activated."
 msgstr ""
 
-#: class.jetpack.php:2419
+#: class.jetpack.php:2426
 msgid "%s was not deactivated."
 msgstr ""
 
-#: class.jetpack.php:2421
+#: class.jetpack.php:2428
 msgid ""
 "This module can only be altered by %s, the user who initiated the Jetpack "
 "connection on this site."
 msgstr ""
 
-#: class.jetpack.php:2424
+#: class.jetpack.php:2431
 msgid ""
 "Only the user who initiated the Jetpack connection on this site can toggle "
 "%s, but that user no longer exists. This should not happen."
 msgstr ""
 
-#: class.jetpack.php:2428
+#: class.jetpack.php:2435
 msgid ""
 "<strong>Your Jetpack has a glitch.</strong> Connecting this site with "
 "WordPress.com is not possible. This usually means your site is not publicly "
 "accessible (localhost)."
 msgstr ""
 
-#: class.jetpack.php:2434
+#: class.jetpack.php:2441
 msgid ""
 "WordPress.com is currently having problems and is unable to fuel up your "
 "Jetpack.  Please try again later."
 msgstr ""
 
-#: class.jetpack.php:2438
+#: class.jetpack.php:2445
 msgid ""
 "Jetpack could not contact WordPress.com: %s.  This usually means something "
 "is incorrectly configured on your web host."
 msgstr ""
 
-#: class.jetpack.php:2478
+#: class.jetpack.php:2485
 msgid ""
 "<strong>Your Jetpack has a glitch.</strong>  Something went wrong that&#8217;"
 "s never supposed to happen.  Guess you&#8217;re just lucky: %s"
 msgstr ""
 
-#: class.jetpack.php:2481
+#: class.jetpack.php:2488
 msgid "Try connecting again."
 msgstr ""
 
-#: class.jetpack.php:2505
+#: class.jetpack.php:2512
 msgid "Welcome to <strong>Jetpack %s</strong>!"
 msgstr ""
 
-#: class.jetpack.php:2517
+#: class.jetpack.php:2524
 msgid "The following new modules have been activated: %l."
 msgstr ""
 
-#: class.jetpack.php:2529
+#: class.jetpack.php:2536
 msgid "The following modules have been updated: %l."
 msgstr ""
 
-#: class.jetpack.php:2538
+#: class.jetpack.php:2545
 msgid ""
 "<strong>%s Activated!</strong> You can deactivate at any time by clicking "
 "the Deactivate link next to each module."
 msgstr ""
 
-#: class.jetpack.php:2564
+#: class.jetpack.php:2571
 msgctxt "%l = list of Jetpack module/feature names"
 msgid ""
 "<strong>%l Deactivated!</strong> You can activate it again at any time using "
@@ -870,47 +869,47 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: class.jetpack.php:2576
+#: class.jetpack.php:2583
 msgid "<strong>Module settings were saved.</strong> "
 msgstr ""
 
-#: class.jetpack.php:2580
+#: class.jetpack.php:2587
 msgid "<strong>Your Jetpack is already connected.</strong> "
 msgstr ""
 
-#: class.jetpack.php:2584 class.jetpack.php:2591
+#: class.jetpack.php:2591 class.jetpack.php:2598
 msgid "<strong>You&#8217;re fueled up and ready to go.</strong> "
 msgstr ""
 
-#: class.jetpack.php:2586
+#: class.jetpack.php:2593
 msgid ""
 "Jetpack is now active. Browse through each Jetpack feature below. Visit the "
 "<a href=\"%s\">settings page</a> to activate/deactivate features."
 msgstr ""
 
-#: class.jetpack.php:2597
+#: class.jetpack.php:2604
 msgid ""
 "<strong>You have unlinked your account (%s) from WordPress.com.</strong>"
 msgstr ""
 
-#: class.jetpack.php:2620
+#: class.jetpack.php:2627
 msgid "Jetpack contains the most recent version of the old %l plugin."
 msgid_plural "Jetpack contains the most recent versions of the old %l plugins."
 msgstr[0] ""
 msgstr[1] ""
 
-#: class.jetpack.php:2631
+#: class.jetpack.php:2638
 msgid "The old version has been deactivated and can be removed from your site."
 msgid_plural ""
 "The old versions have been deactivated and can be removed from your site."
 msgstr[0] ""
 msgstr[1] ""
 
-#: class.jetpack.php:2696
+#: class.jetpack.php:2703
 msgid "Is this site private?"
 msgstr ""
 
-#: class.jetpack.php:2701
+#: class.jetpack.php:2708
 msgctxt "%l = list of Jetpack module/feature names"
 msgid ""
 "Like your site's RSS feeds, %l allows access to your posts and other content "
@@ -921,7 +920,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: class.jetpack.php:2718
+#: class.jetpack.php:2725
 msgctxt ""
 "%1$s = deactivation URL, %2$s = \"Deactivate {list of Jetpack module/feature "
 "names}"
@@ -934,298 +933,215 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: class.jetpack.php:2735
+#: class.jetpack.php:2742
 msgctxt "%l = list of Jetpack module/feature names"
 msgid "Deactivate %l"
 msgstr ""
 
-#: class.jetpack.php:2946
+#: class.jetpack.php:2953
 msgid "Connected to WordPress.com"
 msgstr ""
 
-#: class.jetpack.php:2951
+#: class.jetpack.php:2958
 msgid "User linked to WordPress.com"
 msgstr ""
 
-#: class.jetpack.php:2951
+#: class.jetpack.php:2958
 msgid "Unlink user from WordPress.com"
 msgstr ""
 
-#: class.jetpack.php:2979
+#: class.jetpack.php:2986
 msgid ""
 "To use Jetpack please contact your WordPress administrator to connect it for "
 "you."
 msgstr ""
 
-#: class.jetpack.php:2992
+#: class.jetpack.php:2999
 msgid "Dismiss this notice."
 msgstr ""
 
-#: class.jetpack.php:2997
+#: class.jetpack.php:3004
 msgid ""
 "To enable all of the Jetpack features you&#8217;ll need to connect your "
 "website to WordPress.com using the button to the right. Once you&#8217;ve "
 "made the connection you&#8217;ll activate all the delightful features below."
 msgstr ""
 
-#: class.jetpack.php:3021
+#: class.jetpack.php:3028
 msgid ""
 "To enable all of the Jetpack features you&#8217;ll need to link your account "
 "here to your WordPress.com account using the button to the right."
 msgstr ""
 
-#: class.jetpack.php:3025 modules/post-by-email.php:133
+#: class.jetpack.php:3032 modules/post-by-email.php:133
 #: modules/publicize/publicize-jetpack.php:78
 msgid "Link account with WordPress.com"
 msgstr ""
 
-#: class.jetpack.php:3046 views/admin/network-admin-footer.php:4
+#: class.jetpack.php:3053 views/admin/network-admin-footer.php:4
 msgid "Have feedback on Jetpack?"
 msgstr ""
 
-#: class.jetpack.php:3048 views/admin/network-admin-footer.php:6
+#: class.jetpack.php:3055 views/admin/network-admin-footer.php:6
 msgid ""
 "Answer a short survey to let us know how we&#8217;re doing and what to add "
 "in the future."
 msgstr ""
 
-#: class.jetpack.php:3051 views/admin/network-admin-footer.php:9
+#: class.jetpack.php:3058 views/admin/network-admin-footer.php:9
 msgid "Take Survey"
 msgstr ""
 
-#: class.jetpack.php:3057
+#: class.jetpack.php:3064
 msgid "Checking email updates status&hellip;"
 msgstr ""
 
-#: class.jetpack.php:3063
+#: class.jetpack.php:3070
 msgctxt "%s = Unsubscribe link"
 msgid "You are currently subscribed to email updates. %s"
 msgstr ""
 
-#: class.jetpack.php:3064
+#: class.jetpack.php:3071
 msgid "Unsubscribe"
 msgstr ""
 
-#: class.jetpack.php:3068
+#: class.jetpack.php:3075
 msgctxt "%s = Subscribe link"
 msgid "Want to receive updates about Jetpack by email? %s"
 msgstr ""
 
-#: class.jetpack.php:3069 modules/subscriptions.php:712
+#: class.jetpack.php:3076 modules/subscriptions.php:712
 msgid "Subscribe"
 msgstr ""
 
-#: class.jetpack.php:3076
+#: class.jetpack.php:3083
 msgid "You have been subscribed to receive email updates."
 msgstr ""
 
-#: class.jetpack.php:3078
+#: class.jetpack.php:3085
 msgid "You will no longer receive email updates about Jetpack."
 msgstr ""
 
-#: class.jetpack.php:3090 views/admin/network-admin-footer.php:15
+#: class.jetpack.php:3097 views/admin/network-admin-footer.php:15
 msgid "An <span>Automattic</span> Airline"
 msgstr ""
 
-#: class.jetpack.php:3093 views/admin/network-admin-footer.php:18
+#: class.jetpack.php:3100 views/admin/network-admin-footer.php:18
 msgid "Privacy Policy"
 msgstr ""
 
-#: class.jetpack.php:3094 views/admin/network-admin-footer.php:19
+#: class.jetpack.php:3101 views/admin/network-admin-footer.php:19
 msgid "Terms of Service"
 msgstr ""
 
-#: class.jetpack.php:3127
+#: class.jetpack.php:3134
 msgid "Configure %s"
 msgstr ""
 
-#: class.jetpack.php:3219
+#: class.jetpack.php:3226
 msgid "Free"
 msgstr ""
 
-#: class.jetpack.php:3219
+#: class.jetpack.php:3226
 msgid "Purchase"
 msgstr ""
 
-#: class.jetpack.php:3227
+#: class.jetpack.php:3234
 msgid "New"
 msgstr ""
 
-#: class.jetpack.php:3230
+#: class.jetpack.php:3237
 msgid "Updated"
 msgstr ""
 
-#: class.jetpack.php:3296
+#: class.jetpack.php:3303
 msgid "Coming soon&#8230;"
 msgstr ""
 
-#: class.jetpack.php:3453
+#: class.jetpack.php:3460
 msgid "Something is being cranky!"
 msgstr ""
 
-#: class.jetpack.php:3454
+#: class.jetpack.php:3461
 msgid ""
 "Your site is configured to only permit SSL connections to Jetpack, but SSL "
 "connections don't seem to be functional!"
 msgstr ""
 
-#: class.jetpack.php:3539
+#: class.jetpack.php:3546
 msgid ""
 "Error Details: Jetpack ID is empty. Do not publicly post this error message! "
 "%s"
 msgstr ""
 
-#: class.jetpack.php:3541
+#: class.jetpack.php:3548
 msgid ""
 "Error Details: Jetpack ID is not a scalar. Do not publicly post this error "
 "message! %s"
 msgstr ""
 
-#: class.jetpack.php:3543
+#: class.jetpack.php:3550
 msgid ""
 "Error Details: Jetpack ID begins with a numeral. Do not publicly post this "
 "error message! %s"
 msgstr ""
 
-#: class.jetpack.php:3818
+#: class.jetpack.php:3836
 msgid "Jetpack Plugin Version"
 msgstr ""
 
-#: class.jetpack.php:3824
+#: class.jetpack.php:3842
 msgid "The Client ID/WP.com Blog ID of this site"
 msgstr ""
 
-#: class.jetpack.php:4090
+#: class.jetpack.php:4108
 msgid ""
 "You must connect your Jetpack plugin to WordPress.com to use this feature."
 msgstr ""
 
-#: class.jetpack.php:4093
+#: class.jetpack.php:4111
 msgid ""
 "Someone may be trying to trick you into giving them access to your site.  Or "
 "it could be you just encountered a bug :).  Either way, please close this "
 "window."
 msgstr ""
 
-#: class.jetpack.php:4127
+#: class.jetpack.php:4145
 msgid "The authorization process expired.  Please go back and try again."
 msgstr ""
 
-#: class.jetpack.php:4167
+#: class.jetpack.php:4185
 msgid ""
 "%s wants to access your site&#8217;s data.  Log in to authorize that access."
 msgstr ""
 
-#: class.jetpack.php:4335
+#: class.jetpack.php:4353
 msgid "Something has gotten mixed up!"
 msgstr ""
 
-#: class.jetpack.php:4337
+#: class.jetpack.php:4355
 msgid ""
 "Your <code>%1$s</code> option is set up as <strong>%2$s</strong>, but your "
 "WordPress.com connection lists it as <strong>%3$s</strong>!"
 msgstr ""
 
-#: class.jetpack.php:4339
+#: class.jetpack.php:4357
 msgid ""
 "The data listed above is not for my current site. Please disconnect, and "
 "then form a new connection to WordPress.com for this site using my current "
 "settings."
 msgstr ""
 
-#: class.jetpack.php:4340
+#: class.jetpack.php:4358
 msgid ""
 "Ignore the difference. This is just a staging site for the real site "
 "referenced above."
 msgstr ""
 
-#: class.jetpack.php:4341
+#: class.jetpack.php:4359
 msgid ""
 "That used to be my URL for this site before I changed it. Update the "
 "WordPress.com Cloud's data to match my current settings."
-msgstr ""
-
-#: class.json-api-endpoints.php:1348
-msgid "This post is password protected."
-msgstr ""
-
-#: class.json-api-endpoints.php:3389
-msgid "Comment cache problem?"
-msgstr ""
-
-#: class.json-api-jetpack-endpoints.php:18
-msgid "This user is not authorized to %s on this blog."
-msgstr ""
-
-#: class.json-api-jetpack-endpoints.php:21
-msgid "Full management mode is off for this site."
-msgstr ""
-
-#: class.json-api-jetpack-endpoints.php:68
-msgid "Offset must be greater than or equal to 0."
-msgstr ""
-
-#: class.json-api-jetpack-endpoints.php:70
-msgid "Limit must be greater than or equal to 0."
-msgstr ""
-
-#: class.json-api-jetpack-endpoints.php:114
-msgid "You are required to specify a theme to switch to."
-msgstr ""
-
-#: class.json-api-jetpack-endpoints.php:120
-msgid "Theme is empty."
-msgstr ""
-
-#: class.json-api-jetpack-endpoints.php:126
-msgid "The specified theme was not found."
-msgstr ""
-
-#: class.json-api-jetpack-endpoints.php:303
-msgid "Plugin not found."
-msgstr ""
-
-#: class.json-api-jetpack-endpoints.php:319
-msgid "This user is not authorized to manage plugins network wide."
-msgstr ""
-
-#: class.json-api-jetpack-endpoints.php:344
-msgid "The Plugin is already active."
-msgstr ""
-
-#: class.json-api-jetpack-endpoints.php:408
-msgid "The Plugin is already deactivated."
-msgstr ""
-
-#: class.json-api-jetpack-endpoints.php:517
-#: class.json-api-jetpack-endpoints.php:530
-#: class.json-api-jetpack-endpoints.php:589
-msgid "Module not found: `%s`."
-msgstr ""
-
-#: class.json-api-jetpack-endpoints.php:538
-msgid "The Module is already active."
-msgstr ""
-
-#: class.json-api-jetpack-endpoints.php:545
-msgid "There was an error while activating the module `%s`."
-msgstr ""
-
-#: class.json-api-jetpack-endpoints.php:597
-msgid "The Jetpack Module is already deactivated."
-msgstr ""
-
-#: class.json-api-jetpack-endpoints.php:603
-#: class.json-api-jetpack-endpoints.php:607
-msgid "There was an error while deactivating the module `%s`."
-msgstr ""
-
-#: class.json-api-jetpack-endpoints.php:692
-msgid "There was an error while getting the update data for this site."
-msgstr ""
-
-#: class.json-api-jetpack-endpoints.php:759
-msgid "The Plugin is already up to date."
 msgstr ""
 
 #: functions.gallery.php:12
@@ -1238,6 +1154,98 @@ msgstr ""
 
 #: functions.opengraph.php:101
 msgid "(no title)"
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:36
+#: json-endpoints/class.json-api-jetpack-endpoints.php:41
+msgid "This user is not authorized to %s on this blog."
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:46
+msgid "Full management mode is off for this site."
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:93
+msgid "Offset must be greater than or equal to 0."
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:95
+msgid "Limit must be greater than or equal to 0."
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:139
+msgid "You are required to specify a theme to switch to."
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:145
+msgid "Theme is empty."
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:151
+msgid "The specified theme was not found."
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:155
+msgid "You are not allowed to switch to this theme"
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:324
+msgid "Plugin not found."
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:340
+msgid "This user is not authorized to manage plugins network wide."
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:365
+msgid "The Plugin is already active."
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:429
+msgid "The Plugin is already deactivated."
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:538
+#: json-endpoints/class.json-api-jetpack-endpoints.php:551
+#: json-endpoints/class.json-api-jetpack-endpoints.php:610
+msgid "Module not found: `%s`."
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:559
+msgid "The Module is already active."
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:566
+msgid "There was an error while activating the module `%s`."
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:618
+msgid "The Jetpack Module is already deactivated."
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:624
+#: json-endpoints/class.json-api-jetpack-endpoints.php:628
+msgid "There was an error while deactivating the module `%s`."
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:723
+msgid "There was an error while getting the update data for this site."
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:795
+msgid "The Plugin is already up to date."
+msgstr ""
+
+#: json-endpoints/class.json-api-jetpack-endpoints.php:798
+msgid "There was an error while trying to upgrade."
+msgstr ""
+
+#: json-endpoints/class.wpcom-json-api-post-endpoint.php:81
+msgid "This post is password protected."
+msgstr ""
+
+#: json-endpoints/class.wpcom-json-api-update-comment-endpoint.php:118
+msgid "Comment cache problem?"
 msgstr ""
 
 #. translators: combined name for locales: 1: name in English, 2: native name
@@ -1520,85 +1528,85 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: modules/carousel/jetpack-carousel.php:274
+#: modules/carousel/jetpack-carousel.php:267
 msgid "Missing attachment ID."
 msgstr ""
 
-#: modules/carousel/jetpack-carousel.php:314
+#: modules/carousel/jetpack-carousel.php:307
 msgid "Nonce verification failed."
 msgstr ""
 
-#: modules/carousel/jetpack-carousel.php:321
+#: modules/carousel/jetpack-carousel.php:314
 msgid "Missing target blog ID."
 msgstr ""
 
-#: modules/carousel/jetpack-carousel.php:324
+#: modules/carousel/jetpack-carousel.php:317
 msgid "Missing target post ID."
 msgstr ""
 
-#: modules/carousel/jetpack-carousel.php:327
+#: modules/carousel/jetpack-carousel.php:320
 msgid "No comment text was submitted."
 msgstr ""
 
-#: modules/carousel/jetpack-carousel.php:339
+#: modules/carousel/jetpack-carousel.php:332
 msgid "Comments on this post are closed."
 msgstr ""
 
-#: modules/carousel/jetpack-carousel.php:349
+#: modules/carousel/jetpack-carousel.php:342
 msgid "Sorry, but we could not authenticate your request."
 msgstr ""
 
-#: modules/carousel/jetpack-carousel.php:358
+#: modules/carousel/jetpack-carousel.php:351
 msgid "Please provide your name."
 msgstr ""
 
-#: modules/carousel/jetpack-carousel.php:361
+#: modules/carousel/jetpack-carousel.php:354
 msgid "Please provide an email address."
 msgstr ""
 
-#: modules/carousel/jetpack-carousel.php:364
+#: modules/carousel/jetpack-carousel.php:357
 msgid "Please provide a valid email address."
 msgstr ""
 
-#: modules/carousel/jetpack-carousel.php:393
+#: modules/carousel/jetpack-carousel.php:386
 msgid "Image Gallery Carousel"
 msgstr ""
 
-#: modules/carousel/jetpack-carousel.php:396
+#: modules/carousel/jetpack-carousel.php:389
 msgid "Enable carousel"
 msgstr ""
 
-#: modules/carousel/jetpack-carousel.php:400
+#: modules/carousel/jetpack-carousel.php:393
 #: modules/shortcodes/slideshow.php:72
 msgid "Background color"
 msgstr ""
 
-#: modules/carousel/jetpack-carousel.php:403
+#: modules/carousel/jetpack-carousel.php:396
 msgid "Metadata"
 msgstr ""
 
-#: modules/carousel/jetpack-carousel.php:460
+#: modules/carousel/jetpack-carousel.php:453
 msgid ""
 "Show photo metadata (<a href=\"http://en.wikipedia.org/wiki/"
 "Exchangeable_image_file_format\" target=\"_blank\">Exif</a>) in carousel, "
 "when available."
 msgstr ""
 
-#: modules/carousel/jetpack-carousel.php:468
+#: modules/carousel/jetpack-carousel.php:461
 msgid "Show map of photo location in carousel, when available."
 msgstr ""
 
-#: modules/carousel/jetpack-carousel.php:476
+#: modules/carousel/jetpack-carousel.php:469
 #: modules/shortcodes/slideshow.php:79
 msgid "Black"
 msgstr ""
 
-#: modules/carousel/jetpack-carousel.php:476
+#: modules/carousel/jetpack-carousel.php:469
 #: modules/shortcodes/slideshow.php:80
 msgid "White"
 msgstr ""
 
-#: modules/carousel/jetpack-carousel.php:484
+#: modules/carousel/jetpack-carousel.php:477
 msgid "Display images in full-size carousel slideshow."
 msgstr ""
 
@@ -1621,7 +1629,7 @@ msgstr ""
 msgid "Transparent"
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
 #: modules/comments/admin.php:72
 msgid "Jetpack Comments"
@@ -1778,22 +1786,22 @@ msgstr ""
 msgid "Spam"
 msgstr ""
 
-#: modules/contact-form/grunion-contact-form.php:85
-#: modules/contact-form/grunion-contact-form.php:86
+#: modules/contact-form/grunion-contact-form.php:82
+#: modules/contact-form/grunion-contact-form.php:83
 #: modules/contact-form/grunion-form-view.php:136
 msgid "Feedback"
 msgstr ""
 
-#: modules/contact-form/grunion-contact-form.php:87
+#: modules/contact-form/grunion-contact-form.php:84
 msgid "Search Feedback"
 msgstr ""
 
-#: modules/contact-form/grunion-contact-form.php:88
-#: modules/contact-form/grunion-contact-form.php:89
+#: modules/contact-form/grunion-contact-form.php:85
+#: modules/contact-form/grunion-contact-form.php:86
 msgid "No feedback found"
 msgstr ""
 
-#: modules/contact-form/grunion-contact-form.php:106
+#: modules/contact-form/grunion-contact-form.php:103
 msgid "Spam <span class=\"count\">(%s)</span>"
 msgid_plural "Spam <span class=\"count\">(%s)</span>"
 msgstr[0] ""
@@ -1828,11 +1836,11 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
 #: modules/contact-form/grunion-contact-form.php:466
 #: modules/contact-form/grunion-contact-form.php:619
-#: modules/contact-form/grunion-form-view.php:30 modules/module-info.php:479
+#: modules/contact-form/grunion-form-view.php:30 modules/module-info.php:478
 msgid "Contact Form"
 msgstr ""
 
@@ -2077,7 +2085,7 @@ msgid "Edit this new field"
 msgstr ""
 
 #: modules/contact-form/grunion-form-view.php:150
-#: modules/sharedaddy/sharing-sources.php:1009
+#: modules/sharedaddy/sharing-sources.php:1023
 msgid "Label"
 msgstr ""
 
@@ -2157,7 +2165,7 @@ msgstr ""
 msgid "Save and go back to form builder"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:474
+#: modules/custom-css/custom-css.php:475
 msgid ""
 "Welcome to Custom CSS!\n"
 "\n"
@@ -2171,39 +2179,39 @@ msgid ""
 "your theme's stylesheet content."
 msgstr ""
 
-#: modules/custom-css/custom-css.php:595
+#: modules/custom-css/custom-css.php:596
 msgid "Preview: changes must be saved or they will be lost"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:624
+#: modules/custom-css/custom-css.php:625
 msgid "Edit CSS"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:637
+#: modules/custom-css/custom-css.php:638
 msgid "CSS"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:657
+#: modules/custom-css/custom-css.php:658
 msgid "Custom CSS Stylesheet"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:678
+#: modules/custom-css/custom-css.php:679
 msgid "Stylesheet saved."
 msgstr ""
 
-#: modules/custom-css/custom-css.php:682
+#: modules/custom-css/custom-css.php:683
 msgid "Publish"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:688
+#: modules/custom-css/custom-css.php:689
 msgid "CSS Revisions"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:692
+#: modules/custom-css/custom-css.php:693
 msgid "CSS Stylesheet Editor"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:699
+#: modules/custom-css/custom-css.php:700
 msgid ""
 "New to CSS? Start with a <a href=\"http://www.htmldog.com/guides/cssbeginner/"
 "\">beginner tutorial</a>. Questions?\n"
@@ -2211,85 +2219,85 @@ msgid ""
 "templates\">Themes and Templates forum</a>."
 msgstr ""
 
-#: modules/custom-css/custom-css.php:737
+#: modules/custom-css/custom-css.php:738
 msgid "Content Width:"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:738
+#: modules/custom-css/custom-css.php:739
 msgid "Default"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:738
+#: modules/custom-css/custom-css.php:739
 msgid "%s px"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:746
+#: modules/custom-css/custom-css.php:747
 msgid ""
 "Limit width to %1$s pixels for videos, full size images, and other "
 "shortcodes. (<a href=\"%2$s\">More info</a>.)"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:762
+#: modules/custom-css/custom-css.php:763
 msgid "The default content width for the %s theme is %d pixels."
 msgstr ""
 
-#: modules/custom-css/custom-css.php:767 modules/custom-css/custom-css.php:849
-#: modules/custom-css/custom-css.php:878 modules/minileven/minileven.php:270
+#: modules/custom-css/custom-css.php:768 modules/custom-css/custom-css.php:850
+#: modules/custom-css/custom-css.php:879 modules/minileven/minileven.php:270
 #: modules/publicize/publicize-jetpack.php:484
 #: modules/publicize/publicize-jetpack.php:596 modules/publicize/ui.php:273
 msgid "OK"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:768 modules/custom-css/custom-css.php:850
-#: modules/custom-css/custom-css.php:879 modules/minileven/minileven.php:271
+#: modules/custom-css/custom-css.php:769 modules/custom-css/custom-css.php:851
+#: modules/custom-css/custom-css.php:880 modules/minileven/minileven.php:271
 #: modules/sharedaddy/sharing-sources.php:307
 msgid "Cancel"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:832
+#: modules/custom-css/custom-css.php:833
 msgid "Preprocessor:"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:833 modules/custom-css/custom-css.php:838
+#: modules/custom-css/custom-css.php:834 modules/custom-css/custom-css.php:839
 #: modules/videopress/videopress.php:273 modules/widgets/image-widget.php:137
 msgid "None"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:862
+#: modules/custom-css/custom-css.php:863
 msgid "Mode:"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:863
+#: modules/custom-css/custom-css.php:864
 msgid "Add-on"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:863
+#: modules/custom-css/custom-css.php:864
 msgid "Replacement"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:870
+#: modules/custom-css/custom-css.php:871
 msgid "Add-on CSS <b>(Recommended)</b>"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:875
+#: modules/custom-css/custom-css.php:876
 msgid "Replace <a href=\"%s\">theme's CSS</a> <b>(Advanced)</b>"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:886
+#: modules/custom-css/custom-css.php:887
 #: modules/custom-post-types/comics.php:247
 #: modules/videopress/videopress.php:662
 msgid "Preview"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:888
+#: modules/custom-css/custom-css.php:889
 msgid "Save &amp; Buy Upgrade"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:888
+#: modules/custom-css/custom-css.php:889
 msgid "Save Stylesheet"
 msgstr ""
 
-#: modules/custom-css/custom-css.php:954
+#: modules/custom-css/custom-css.php:955
 msgid "Show more"
 msgstr ""
 
@@ -2868,16 +2876,16 @@ msgid "Testimonial Page Featured Image"
 msgstr ""
 
 #: modules/gplus-authorship/admin/ui.php:56
-#: modules/gplus-authorship/admin/ui.php:67 modules/likes.php:469
-#: modules/likes.php:481 modules/publicize/ui.php:35
+#: modules/gplus-authorship/admin/ui.php:67 modules/likes.php:480
+#: modules/likes.php:492 modules/publicize/ui.php:35
 #: modules/publicize/ui.php:45 modules/sharedaddy/sharing.php:66
 #: modules/sharedaddy/sharing.php:176
 msgid "Sharing Settings"
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
-#: modules/gplus-authorship/admin/ui.php:56 modules/likes.php:469
+#: modules/gplus-authorship/admin/ui.php:56 modules/likes.php:480
 #: modules/module-info.php:311 modules/publicize/ui.php:35
 #: modules/sharedaddy/sharedaddy.php:26 modules/sharedaddy/sharing.php:66
 msgid "Sharing"
@@ -2895,9 +2903,9 @@ msgstr ""
 msgid "You must click 'Accept' in the Google+ dialog to connect your account."
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
-#: modules/gplus-authorship/admin/ui.php:115 modules/module-info.php:734
+#: modules/gplus-authorship/admin/ui.php:115 modules/module-info.php:733
 msgid "Google+ Profile"
 msgstr ""
 
@@ -2954,7 +2962,7 @@ msgstr ""
 msgid "on Google+"
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
 #: modules/gravatar-hovercards.php:47
 msgid "Gravatar Hovercards"
@@ -2982,9 +2990,9 @@ msgstr ""
 
 #: modules/infinite-scroll/infinity.php:297
 msgid ""
-"We've disabled this option for you since you have footer widgets in "
-"Appearance &rarr; Widgets, or because your theme does not support infinite "
-"scroll."
+"We&rsquo;ve changed this option to a click-to-scroll version for you since "
+"you have footer widgets in Appearance &rarr; Widgets, or your theme uses "
+"click-to-scroll as the default behavior."
 msgstr ""
 
 #: modules/infinite-scroll/infinity.php:303
@@ -2995,19 +3003,19 @@ msgstr ""
 msgid "(Shows %s posts on each load)"
 msgstr ""
 
-#: modules/infinite-scroll/infinity.php:533
+#: modules/infinite-scroll/infinity.php:534
 msgid "Older posts"
 msgstr ""
 
-#: modules/infinite-scroll/infinity.php:550
+#: modules/infinite-scroll/infinity.php:551
 msgid "Older %s"
 msgstr ""
 
-#: modules/infinite-scroll/infinity.php:567
+#: modules/infinite-scroll/infinity.php:568
 msgid "Scroll back to top"
 msgstr ""
 
-#: modules/infinite-scroll/infinity.php:1093
+#: modules/infinite-scroll/infinity.php:1094
 msgid "Theme: %1$s."
 msgstr ""
 
@@ -3026,117 +3034,119 @@ msgid ""
 msgstr ""
 
 #: modules/json-api.php:40
-msgid "Allow full management"
+msgid "Allow management"
 msgstr ""
 
 #: modules/json-api.php:41
-msgid "Allow Activation, Deactivation and Upgrade of plugins via the JSON API."
+msgid ""
+"Allow remote management of themes, plugins, and WordPress via the JSON API. "
+"<a href=\"%s\" title=\"Learn more about JSON API\">More info</a>"
 msgstr ""
 
-#: modules/json-api.php:43 modules/minileven.php:75 modules/stats.php:573
+#: modules/json-api.php:44 modules/minileven.php:75 modules/stats.php:573
 msgid "Save configuration"
 msgstr ""
 
-#: modules/likes.php:116
+#: modules/likes.php:117
 msgid "Likes and Shares"
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
-#: modules/likes.php:127 modules/likes.php:640 modules/module-info.php:710
+#: modules/likes.php:128 modules/likes.php:651 modules/module-info.php:709
 msgid "Likes"
 msgstr ""
 
-#: modules/likes.php:187
+#: modules/likes.php:188
 msgid "Show likes."
 msgstr ""
 
-#: modules/likes.php:203 modules/sharedaddy/sharedaddy.php:40
+#: modules/likes.php:204 modules/sharedaddy/sharedaddy.php:40
 msgid "Show sharing buttons."
 msgstr ""
 
-#: modules/likes.php:215
+#: modules/likes.php:216
 msgid "Likes Notifications"
 msgstr ""
 
-#: modules/likes.php:216
+#: modules/likes.php:217
 msgid "Email me whenever"
 msgstr ""
 
-#: modules/likes.php:255
+#: modules/likes.php:256
 msgid "Someone likes one of my posts"
 msgstr ""
 
-#: modules/likes.php:274
+#: modules/likes.php:275
 msgid "WordPress.com Likes are"
 msgstr ""
 
-#: modules/likes.php:280
+#: modules/likes.php:281
 msgid "On for all posts"
 msgstr ""
 
-#: modules/likes.php:286
+#: modules/likes.php:287
 msgid "Turned on per post"
 msgstr ""
 
-#: modules/likes.php:294
+#: modules/likes.php:295
 msgid "WordPress.com Reblog Button"
 msgstr ""
 
-#: modules/likes.php:300
+#: modules/likes.php:301
 msgid "Show the Reblog button on posts"
 msgstr ""
 
-#: modules/likes.php:306
+#: modules/likes.php:307
 msgid "Don't show the Reblog button on posts"
 msgstr ""
 
-#: modules/likes.php:313
+#: modules/likes.php:314
 msgid "Comment Likes are"
 msgstr ""
 
-#: modules/likes.php:319
+#: modules/likes.php:320
 msgid "On for all comments"
 msgstr ""
 
-#: modules/likes.php:333 modules/sharedaddy/sharing.php:343
+#: modules/likes.php:334 modules/sharedaddy/sharing.php:343
 msgid "Show buttons on"
 msgstr ""
 
-#: modules/likes.php:342 modules/sharedaddy/sharing.php:349
+#: modules/likes.php:343 modules/sharedaddy/sharing.php:349
 msgid "Front Page, Archive Pages, and Search Results"
 msgstr ""
 
-#: modules/likes.php:492 modules/sharedaddy/sharing.php:167
+#: modules/likes.php:503 modules/sharedaddy/sharing.php:167
 msgid "Settings have been saved"
 msgstr ""
 
-#: modules/likes.php:499 modules/sharedaddy/sharing.php:183
+#: modules/likes.php:510 modules/sharedaddy/sharing.php:183
 msgid "Sharing Buttons"
 msgstr ""
 
-#: modules/likes.php:508 modules/sharedaddy/sharing.php:365
+#: modules/likes.php:519 modules/sharedaddy/sharing.php:365
 #: modules/verification-tools/blog-verification-tools.php:97
 msgid "Save Changes"
 msgstr ""
 
-#: modules/likes.php:675
+#: modules/likes.php:686
 msgid "Like this:"
 msgstr ""
 
-#: modules/likes.php:676
+#: modules/likes.php:687
 msgid "Like"
 msgstr ""
 
-#: modules/likes.php:676 modules/widget-visibility/widget-conditions.php:203
+#: modules/likes.php:687 modules/widget-visibility/widget-conditions.php:203
 msgid "Loading..."
 msgstr ""
 
-#: modules/likes.php:783
+#: modules/likes.php:794
 msgid "<span>%d</span> bloggers like this:"
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
 #: modules/markdown/easy-markdown.php:246
 #: modules/markdown/easy-markdown.php:248
@@ -3442,7 +3452,7 @@ msgid ""
 "Phone</a>, and <a href=\"%s\">more</a>!"
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
 #: modules/module-info.php:22
 msgid "VaultPress"
@@ -3516,7 +3526,7 @@ msgid ""
 "Deactivate button above."
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
 #: modules/module-info.php:87 modules/module-info.php:99
 msgid "Shortcode Embeds"
@@ -3539,7 +3549,7 @@ msgstr ""
 msgid "Available shortcodes are: %l."
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
 #: modules/module-info.php:152 modules/module-info.php:165
 msgid "WP.me Shortlinks"
@@ -3567,7 +3577,7 @@ msgid ""
 "you can copy and paste to Twitter, Facebook or wherever your heart desires."
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
 #: modules/module-info.php:185 modules/module-info.php:197
 #: views/admin/admin-page.php:62
@@ -3585,7 +3595,7 @@ msgstr ""
 msgid "You can <a href=\"%s\">view your stats dashboard here</a>."
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
 #: modules/module-info.php:216 modules/publicize/ui.php:94
 msgid "Publicize"
@@ -3612,7 +3622,7 @@ msgstr ""
 msgid "More information on using Publicize."
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
 #: modules/module-info.php:245 modules/module-info.php:257
 #: modules/monitor.php:64 modules/notes.php:159
@@ -3702,7 +3712,7 @@ msgid ""
 "Watch it in HD for extra snazz!"
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
 #: modules/module-info.php:360
 msgid "Spelling and Grammar"
@@ -3768,146 +3778,116 @@ msgid ""
 msgstr ""
 
 #: modules/module-info.php:394
-msgid "The RSS Links Widget"
-msgstr ""
-
-#: modules/module-info.php:394
 msgid ""
-"lets you easily add post and comment RSS feeds to a sidebar on your theme."
+"<strong>The Twitter Widget</strong> shows your latest tweets within a "
+"sidebar on your theme."
 msgstr ""
 
 #: modules/module-info.php:395
-msgid "The Twitter Widget"
-msgstr ""
-
-#: modules/module-info.php:395
-msgid "shows your latest tweets within a sidebar on your theme."
-msgstr ""
-
-#: modules/module-info.php:396
-msgid "The Facebook Like Box Widget"
+msgid ""
+"<strong>The Facebook Like Box Widget</strong> shows your Facebook Like Box "
+"within a sidebar on your theme."
 msgstr ""
 
 #: modules/module-info.php:396
-msgid "shows your Facebook Like Box within a sidebar on your theme."
+msgid ""
+"<strong>The Image Widget</strong> lets you easily add images to a sidebar on "
+"your theme."
 msgstr ""
 
 #: modules/module-info.php:397
-msgid "The Image Widget"
-msgstr ""
-
-#: modules/module-info.php:397
-msgid "lets you easily add images to a sidebar on your theme."
-msgstr ""
-
-#: modules/module-info.php:398
-msgid "The Gravatar Widget"
+msgid ""
+"<strong>The Gravatar Widget</strong> allows you to pull in your Gravatar "
+"image along with some of your Gravatar profile data."
 msgstr ""
 
 #: modules/module-info.php:398
 msgid ""
-"allows you to pull in your Gravatar image along with some of your Gravatar "
-"profile data."
-msgstr ""
-
-#: modules/module-info.php:399
-msgid "The Gallery Widget"
+"<strong>The Gallery Widget</strong> provides you with a simple way to "
+"display a photo gallery or slideshow in your blog’s sidebar. Requires the "
+"Tiled Gallery module."
 msgstr ""
 
 #: modules/module-info.php:399
 msgid ""
-"provides you with a simple way to display a photo gallery or slideshow in "
-"your blog’s sidebar. Requires the Tiled Gallery module."
-msgstr ""
-
-#: modules/module-info.php:400
-msgid "The Display WordPress Posts Widget"
+"<strong>The Display WordPress Posts Widget</strong> lets you display up to "
+"ten recent posts from another WordPress.com blog, or a self-hosted WordPress "
+"site with Jetpack enabled."
 msgstr ""
 
 #: modules/module-info.php:400
 msgid ""
-"lets you display up to ten recent posts from another WordPress.com blog, or "
-"a self-hosted WordPress site with Jetpack enabled."
+"<strong>Retired: The Readmill Widget</strong> allows your readers to send a "
+"book to their device with one click."
 msgstr ""
 
 #: modules/module-info.php:401
-msgid "The Readmill Widget"
-msgstr ""
-
-#: modules/module-info.php:401
-msgid "allows your readers to send a book to their device with one click."
-msgstr ""
-
-#: modules/module-info.php:402
-msgid "The Upcoming Events Widget"
-msgstr ""
-
-#: modules/module-info.php:402
 msgid ""
-"allows you to use an iCalendar link to display a list of events on your site."
+"<strong>The Upcoming Events Widget</strong> allows you to use an iCalendar "
+"link to display a list of events on your site."
 msgstr ""
 
-#: modules/module-info.php:404
+#: modules/module-info.php:403
 msgid "Each of these widgets has a number of customization options."
 msgstr ""
 
-#: modules/module-info.php:404
+#: modules/module-info.php:403
 msgid ""
 "To use the widgets, go to Appearance &#8594; <a href=\"%s\">Widgets</a>. "
 "Drag them into one of your sidebars and configure away."
 msgstr ""
 
-#: modules/module-info.php:417
+#: modules/module-info.php:416
 msgid "Subsriptions Screenshot"
 msgstr ""
 
-#: modules/module-info.php:420
+#: modules/module-info.php:419
 msgid ""
 "Easily allow any visitor to subscribe to all of your posts via email through "
 "a widget in your blog&#8217;s sidebar.  Every time you publish a post, "
 "WordPress.com will send a notification to all your subscribers."
 msgstr ""
 
-#: modules/module-info.php:421
+#: modules/module-info.php:420
 msgid ""
 "When leaving comments, your visitors can also subscribe to a post&#8217;s "
 "comments to keep up with the conversation."
 msgstr ""
 
-#: modules/module-info.php:426
+#: modules/module-info.php:425
 msgid ""
 "To use the Subscriptions widget, go to Appearance &#8594; <a href=\"%s"
 "\">Widgets</a>. Drag the widget labeled &#8220;Blog Subscriptions "
 "(Jetpack)&#8221; into one of your sidebars and configure away."
 msgstr ""
 
-#: modules/module-info.php:427
+#: modules/module-info.php:426
 msgid ""
 "You can also make changes to your Subscription settings at the bottom of the "
 "<a href=\"%s\">Discussion Settings</a> page."
 msgstr ""
 
-#: modules/module-info.php:428
+#: modules/module-info.php:427
 msgid ""
 "To customize the emails sent from your blog to your followers, check the "
 "settings at the bottom of the <a href=\"%s\">Reading Settings</a> page."
 msgstr ""
 
-#: modules/module-info.php:441
+#: modules/module-info.php:440
 msgid ""
 "Jetpack will automatically take the great published content from your blog "
 "or website and share it instantly with third party services like search "
 "engines, increasing your reach and traffic."
 msgstr ""
 
-#: modules/module-info.php:456
+#: modules/module-info.php:455
 msgid ""
 "Jetpack will allow you to authorize applications and services to securely "
 "connect to your blog and allow them to use your content in new ways and "
 "offer you new functionality."
 msgstr ""
 
-#: modules/module-info.php:458
+#: modules/module-info.php:457
 msgid ""
 "Developers can use WordPress.com's <a href='http://developer.wordpress.com/"
 "docs/oauth2/'>OAuth2</a> authentication system and <a href='http://developer."
@@ -3915,13 +3895,13 @@ msgid ""
 "your site's content."
 msgstr ""
 
-#: modules/module-info.php:484
+#: modules/module-info.php:483
 msgid ""
 "A contact form is a great way to offer your readers the ability to get in "
 "touch, without giving out your personal email address."
 msgstr ""
 
-#: modules/module-info.php:487
+#: modules/module-info.php:486
 msgid ""
 "Each contact form can easily be customized to fit your needs. When a user "
 "submits your contact form, the feedback will be filtered through <a href="
@@ -3930,66 +3910,66 @@ msgid ""
 "added to your feedback management area."
 msgstr ""
 
-#: modules/module-info.php:504
+#: modules/module-info.php:503
 msgid "Jetpack Comments Screenshot"
 msgstr ""
 
-#: modules/module-info.php:507
+#: modules/module-info.php:506
 msgid ""
 "Jetpack Comments enables your visitors to use their WordPress.com, Twitter, "
 "or Facebook accounts when commenting on your site."
 msgstr ""
 
-#: modules/module-info.php:512
+#: modules/module-info.php:511
 msgid ""
 "Jetpack tries to match your site's color scheme automatically, but you can "
 "make manual adjustments at the bottom of the <a href='%s'>Discussion "
 "Settings</a> page."
 msgstr ""
 
-#: modules/module-info.php:533
+#: modules/module-info.php:532
 msgid "Gallery Carousel Screenshot"
 msgstr ""
 
-#: modules/module-info.php:536
+#: modules/module-info.php:535
 msgid ""
 "With Carousel active, any standard WordPress galleries you have embedded in "
 "posts or pages will launch a gorgeous full-screen photo browsing experience "
 "with comments and EXIF metadata."
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
-#: modules/module-info.php:549 views/admin/admin-page.php:46
+#: modules/module-info.php:548 views/admin/admin-page.php:46
 msgid "Custom CSS"
 msgstr ""
 
-#: modules/module-info.php:552
+#: modules/module-info.php:551
 msgid ""
 "The Custom CSS editor gives you the ability to add to or replace your "
 "theme's CSS, all while supplying syntax coloring, auto-indentation, and "
 "immediate feedback on the validity of the CSS you're writing."
 msgstr ""
 
-#: modules/module-info.php:553
+#: modules/module-info.php:552
 msgid ""
 "To use the CSS editor, go to Appearance &#8594; <a href=\"%s\">Edit CSS</a>."
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
-#: modules/module-info.php:570
+#: modules/module-info.php:569
 msgid "Mobile Theme"
 msgstr ""
 
-#: modules/module-info.php:573
+#: modules/module-info.php:572
 msgid ""
 "There's a good chance that visitors to your site will be using a smartphone, "
 "and it's important to provide them with a great reading experience while on "
 "the small screen."
 msgstr ""
 
-#: modules/module-info.php:574
+#: modules/module-info.php:573
 msgid ""
 "Jetpack's mobile theme is optimized for small screens. It uses the header "
 "image, background, and widgets from your current theme for a great custom "
@@ -3997,7 +3977,7 @@ msgid ""
 "look fantastic on a smartphone."
 msgstr ""
 
-#: modules/module-info.php:575
+#: modules/module-info.php:574
 msgid ""
 "Visitors on iPhone, Android, Windows Phone, and other mobile devices will "
 "automatically see the mobile theme, with the option to view the full site. "
@@ -4005,19 +3985,19 @@ msgid ""
 "\"Deactive\" button above."
 msgstr ""
 
-#: modules/module-info.php:592
+#: modules/module-info.php:591
 msgid ""
 "If you are a theme author, you can learn about adding support for Infinite "
 "Scroll at <a href=\"%1$s\">%1$s</a>."
 msgstr ""
 
-#: modules/module-info.php:597
+#: modules/module-info.php:596
 msgid ""
 "When you write great content, all you really want is people to find it, "
 "right?"
 msgstr ""
 
-#: modules/module-info.php:599
+#: modules/module-info.php:598
 msgid ""
 "With the Infinite Scroll module and a supported theme, that's exactly what "
 "happens. Instead of the old way of navigating down a page by scrolling and "
@@ -4027,51 +4007,51 @@ msgid ""
 "bottom of the page, more like an application."
 msgstr ""
 
-#: modules/module-info.php:602
+#: modules/module-info.php:601
 msgid ""
 "At this time, your theme, %s, doesn't support Infinite Scroll. Unlike other "
 "Jetpack modules, Infinite Scroll needs information from your theme to "
 "function properly."
 msgstr ""
 
-#: modules/module-info.php:604
+#: modules/module-info.php:603
 msgid ""
 "Until your theme supports Infinite Scroll, you won't be able to activate "
 "this module."
 msgstr ""
 
-#: modules/module-info.php:614
+#: modules/module-info.php:613
 msgid ""
 "There is an update available for your theme. You may wish to check if this "
 "update adds Infinite Scroll support by visiting the <a href=\"%s\">WordPress "
 "Updates</a> page."
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
-#: modules/module-info.php:638 modules/post-by-email.php:93
+#: modules/module-info.php:637 modules/post-by-email.php:93
 msgid "Post by Email"
 msgstr ""
 
-#: modules/module-info.php:641
+#: modules/module-info.php:640
 msgid ""
 "Post by Email is a way of publishing posts on your blog by email. Any email "
 "client can be used to send the email, allowing you to publish quickly and "
 "easily from devices such as cell phones."
 msgstr ""
 
-#: modules/module-info.php:645
+#: modules/module-info.php:644
 msgid ""
 "Manage your Post By Email address from your <a href=\"%s\">profile settings</"
 "a>."
 msgstr ""
 
-#: modules/module-info.php:649
+#: modules/module-info.php:648
 msgid ""
 "More information on sending emails, attachments, and customizing your posts."
 msgstr ""
 
-#: modules/module-info.php:669
+#: modules/module-info.php:668
 msgid ""
 "Give your site a boost by loading images in posts from the WordPress.com "
 "content delivery network. We cache your images and serve them from our super-"
@@ -4079,19 +4059,19 @@ msgid ""
 "button."
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
-#: modules/module-info.php:689 modules/tiled-gallery/tiled-gallery.php:387
+#: modules/module-info.php:688 modules/tiled-gallery/tiled-gallery.php:387
 msgid "Tiled Galleries"
 msgstr ""
 
-#: modules/module-info.php:692
+#: modules/module-info.php:691
 msgid ""
 "Create elegant magazine-style mosaic layouts for your photos without having "
 "to use an external graphic editor."
 msgstr ""
 
-#: modules/module-info.php:693
+#: modules/module-info.php:692
 msgid ""
 "When adding a gallery to your post, you now have the option to select a "
 "layout style for your images. We've added support for Rectangular, Square, "
@@ -4102,69 +4082,69 @@ msgid ""
 "gallery pictures in a cool mosaic.\""
 msgstr ""
 
-#: modules/module-info.php:694
+#: modules/module-info.php:693
 msgid ""
 "Note: Images in tiled galleries require extra-special processing, so they "
 "will be served from WordPress.com's CDN even if the Photon module is "
 "disabled."
 msgstr ""
 
-#: modules/module-info.php:714
+#: modules/module-info.php:713
 msgid ""
 "Likes allow your readers to show their appreciation for your posts and other "
 "published content using their WordPress.com accounts. Your readers will then "
 "be able to review their liked posts from WordPress.com."
 msgstr ""
 
-#: modules/module-info.php:715
+#: modules/module-info.php:714
 msgid ""
 "Displayed below your posts will be how many people have liked your posts and "
 "the Gravatars of those who have liked them."
 msgstr ""
 
-#: modules/module-info.php:717
+#: modules/module-info.php:716
 msgid "More information on using Likes."
 msgstr ""
 
-#: modules/module-info.php:738
+#: modules/module-info.php:737
 msgid ""
 "The Google+ profile module allows you to connect your blog and Google+ "
 "accounts."
 msgstr ""
 
-#: modules/module-info.php:739
+#: modules/module-info.php:738
 msgid ""
 "Displayed below your posts will be a link back to your Google+ profile and a "
 "Google+ follow button. A link will also be added to your Google+ profile."
 msgstr ""
 
-#: modules/module-info.php:741
+#: modules/module-info.php:740
 msgid "More information on using Google+ Profile."
 msgstr ""
 
-#: modules/module-info.php:757
+#: modules/module-info.php:756
 msgid ""
 "Search once, get results from everything! Currently supports searching "
 "posts, pages, comments, media, and plugins."
 msgstr ""
 
-#: modules/module-info.php:759
+#: modules/module-info.php:758
 msgid ""
 "Omnisearch plays nice with other plugins by letting other providers offer "
 "results as well."
 msgstr ""
 
-#: modules/module-info.php:778
+#: modules/module-info.php:777
 msgid "Control which pages your widgets appear on with Widget Visibility."
 msgstr ""
 
-#: modules/module-info.php:779
+#: modules/module-info.php:778
 msgid ""
 "To control visibility, expand the widget and click the Visibility button "
 "next to the Save button, and then, choose a set of visibility options."
 msgstr ""
 
-#: modules/module-info.php:780
+#: modules/module-info.php:779
 msgid ""
 "For example, if you wanted the Archives widget to only appear on category "
 "archives and error pages, choose \"Show\" from the first dropdown and then "
@@ -4172,14 +4152,14 @@ msgid ""
 "Pages.\""
 msgstr ""
 
-#: modules/module-info.php:781
+#: modules/module-info.php:780
 msgid ""
 "You can also hide widgets based on the current page. For example, if you "
 "don't want the Archives widget to appear on search results pages, choose "
 "\"Hide\" and \"Page is Search results.\""
 msgstr ""
 
-#: modules/module-info.php:796
+#: modules/module-info.php:795
 msgid ""
 "With the VideoPress module you can easily upload videos to your WordPress "
 "site and embed them in your posts and pages. This module requires a "
@@ -4187,20 +4167,20 @@ msgid ""
 "premium-upgrades/videopress/\" target=\"_blank\">VideoPress subscription</a>."
 msgstr ""
 
-#: modules/module-info.php:810
+#: modules/module-info.php:809
 msgid ""
 "With WordPress.com Single Sign On, your users will be able to log in to or "
 "register for your WordPress site with the same credentials they use on "
 "WordPress.com.  It's safe and secure."
 msgstr ""
 
-#: modules/module-info.php:811
+#: modules/module-info.php:810
 msgid ""
 "Once enabled, a \"Log in with WordPress.com\" option will be added to your "
 "existing log in form."
 msgstr ""
 
-#: modules/module-info.php:827 modules/monitor.php:52
+#: modules/module-info.php:826 modules/monitor.php:52
 msgid ""
 "Nobody likes downtime, and that's why Jetpack Monitor is on the job, keeping "
 "tabs on your site by checking it every five minutes. As soon as any downtime "
@@ -4208,37 +4188,37 @@ msgid ""
 "issue. That way you can act quickly, to get your site back online again!"
 msgstr ""
 
-#: modules/module-info.php:829 modules/monitor.php:53
+#: modules/module-info.php:828 modules/monitor.php:53
 msgid ""
 "We’ll also let you know as soon as your site is up and running, so you can "
 "keep an eye on total downtime."
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
-#: modules/module-info.php:856 modules/module-info.php:879
+#: modules/module-info.php:855 modules/module-info.php:878
 msgid "Related Posts"
 msgstr ""
 
-#: modules/module-info.php:857 modules/module-info.php:880
+#: modules/module-info.php:856 modules/module-info.php:879
 msgid ""
 "\"Related Posts\" shows additional relevant links from your site under your "
 "posts. If the feature is enabled, links appear underneath your Sharing "
 "Buttons and WordPress.com Likes (if you’ve turned these on)."
 msgstr ""
 
-#: modules/module-info.php:858 modules/module-info.php:881
+#: modules/module-info.php:857 modules/module-info.php:880
 msgid "More information on using Related Posts."
 msgstr ""
 
-#: modules/module-info.php:883
+#: modules/module-info.php:882
 msgid ""
 "This feature uses the WordPress.com infrastructure and requires that your "
 "public content be mirrored there. If you see intermittent issues only "
 "affecting certain posts, request a reindex of your posts."
 msgstr ""
 
-#: modules/module-info.php:896
+#: modules/module-info.php:895
 msgid ""
 "Markdown lets you compose posts and comments with links, lists, and other "
 "styles using regular characters and punctuation marks. Markdown is used by "
@@ -4247,13 +4227,13 @@ msgid ""
 "lot of complicated codes and shortcuts."
 msgstr ""
 
-#: modules/module-info.php:910
+#: modules/module-info.php:909
 msgid ""
 "Use these tools to verify that you own/control your website with other "
 "external services like Google, Bing and Pinterest."
 msgstr ""
 
-#: modules/module-info.php:911
+#: modules/module-info.php:910
 msgid ""
 "Verifying your site allows you to access advanced features on these other "
 "services (e.g. Webmaster tools, or getting a verified badge). We'll just add "
@@ -4283,7 +4263,7 @@ msgstr ""
 msgid "Comments"
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
 #: modules/omnisearch/omnisearch-core.php:62
 #: modules/omnisearch/omnisearch-core.php:67
@@ -4859,63 +4839,63 @@ msgstr ""
 msgid "Click to share on Google+"
 msgstr ""
 
-#: modules/sharedaddy/sharing-sources.php:959
+#: modules/sharedaddy/sharing-sources.php:973
 msgid "Click to share"
 msgstr ""
 
-#: modules/sharedaddy/sharing-sources.php:1014
+#: modules/sharedaddy/sharing-sources.php:1028
 msgid "URL"
 msgstr ""
 
-#: modules/sharedaddy/sharing-sources.php:1019
+#: modules/sharedaddy/sharing-sources.php:1033
 msgid "Icon"
 msgstr ""
 
-#: modules/sharedaddy/sharing-sources.php:1026
+#: modules/sharedaddy/sharing-sources.php:1040
 msgid "Save"
 msgstr ""
 
-#: modules/sharedaddy/sharing-sources.php:1027
+#: modules/sharedaddy/sharing-sources.php:1041
 msgid "Remove Service"
 msgstr ""
 
-#: modules/sharedaddy/sharing-sources.php:1106
+#: modules/sharedaddy/sharing-sources.php:1120
 msgid "Tumblr"
 msgstr ""
 
-#: modules/sharedaddy/sharing-sources.php:1117
+#: modules/sharedaddy/sharing-sources.php:1131
 msgctxt "share to"
 msgid "Tumblr"
 msgstr ""
 
-#: modules/sharedaddy/sharing-sources.php:1117
+#: modules/sharedaddy/sharing-sources.php:1131
 msgid "Click to share on Tumblr"
 msgstr ""
 
-#: modules/sharedaddy/sharing-sources.php:1153
+#: modules/sharedaddy/sharing-sources.php:1167
 msgid "Pinterest"
 msgstr ""
 
-#: modules/sharedaddy/sharing-sources.php:1160
+#: modules/sharedaddy/sharing-sources.php:1174
 msgctxt "share to"
 msgid "Pinterest"
 msgstr ""
 
-#: modules/sharedaddy/sharing-sources.php:1160
+#: modules/sharedaddy/sharing-sources.php:1174
 msgid "Click to share on Pinterest"
 msgstr ""
 
-#: modules/sharedaddy/sharing-sources.php:1231
-#: modules/sharedaddy/sharing-sources.php:1249
+#: modules/sharedaddy/sharing-sources.php:1245
+#: modules/sharedaddy/sharing-sources.php:1263
 msgid "Pocket"
 msgstr ""
 
-#: modules/sharedaddy/sharing-sources.php:1254
+#: modules/sharedaddy/sharing-sources.php:1268
 msgctxt "share to"
 msgid "Pocket"
 msgstr ""
 
-#: modules/sharedaddy/sharing-sources.php:1254
+#: modules/sharedaddy/sharing-sources.php:1268
 msgid "Click to share on Pocket"
 msgstr ""
 
@@ -5095,7 +5075,7 @@ msgstr ""
 msgid "No upcoming events"
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
 #: modules/sso.php:134
 msgid "Jetpack Single Sign On"
@@ -5687,7 +5667,7 @@ msgstr ""
 msgid "VideoPress Library"
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
 #: modules/videopress/videopress.php:330
 msgid "VideoPress"
@@ -6002,7 +5982,7 @@ msgstr ""
 msgid "Tiles"
 msgstr ""
 
-#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta1)  #-#-#-#-#
+#. #-#-#-#-#  jetpack.pot (Jetpack by WordPress.com 3.1-beta2)  #-#-#-#-#
 #. Module Name of the plugin/theme
 #: modules/widgets/gallery.php:337
 msgid "Carousel"
@@ -6150,70 +6130,52 @@ msgid "Link URL (when the image is clicked):"
 msgstr ""
 
 #: modules/widgets/readmill.php:11
-msgid "Retired:"
-msgstr ""
-
-#: modules/widgets/readmill.php:11
-msgid "Send To Readmill"
+msgid "Retired: Send To Readmill"
 msgstr ""
 
 #: modules/widgets/readmill.php:13
-msgid "Readmill has close it's doors. http://readmill.com/"
+msgid "Readmill has closed its doors. http://readmill.com/"
 msgstr ""
 
-#: modules/widgets/readmill.php:27 modules/widgets/readmill.php:62
-msgid "The Readmill reading service has shut down"
-msgstr ""
-
-#: modules/widgets/readmill.php:29
+#: modules/widgets/readmill.php:27
 msgid ""
-"The Send To Readmill widget is no longer working and will be removed "
-"completely"
+"<strong>The Readmill reading service has shut down</strong><br /> <a taget="
+"\"_blank\" href=\"%s\">Learn More</a>"
 msgstr ""
 
-#: modules/widgets/readmill.php:29 modules/widgets/readmill.php:63
-msgid " from Jetpack"
+#: modules/widgets/readmill.php:30 modules/widgets/readmill.php:68
+msgid ""
+"The Send to Readmill widget is no longer working and will be removed "
+"completely from Jetpack."
 msgstr ""
 
-#: modules/widgets/readmill.php:30
+#: modules/widgets/readmill.php:32 modules/widgets/readmill.php:70
+msgid ""
+"The Send to Readmill widget is no longer working and will be removed "
+"completely."
+msgstr ""
+
+#: modules/widgets/readmill.php:34
 msgid "You can remove it yourself now."
 msgstr ""
 
-#: modules/widgets/readmill.php:31
+#: modules/widgets/readmill.php:35
 msgid "No content is displayed to users who can't manage widgets"
 msgstr ""
 
-#: modules/widgets/readmill.php:62
-msgid "Notice to Administrators:"
-msgstr ""
-
-#: modules/widgets/readmill.php:62
-msgid "learn more"
-msgstr ""
-
-#: modules/widgets/readmill.php:63
+#: modules/widgets/readmill.php:66
 msgid ""
-"The Send to Readmill widget is no longer working and will be removed "
-"completely"
+"Notice to Administrators:<br /> <strong>The Readmill reading service has "
+"shut down</strong> <a taget=\"_blank\" href=\"%s\">learn more</a>."
 msgstr ""
 
-#: modules/widgets/readmill.php:64
-msgid "You can visit "
+#: modules/widgets/readmill.php:72
+msgid ""
+"You can visit <a href=\"%s\" title=\"Appearance > Widgets\">Appearance > "
+"Widgets </a> to remove it from this sidebar."
 msgstr ""
 
-#: modules/widgets/readmill.php:64
-msgid "Appearance > Widgets"
-msgstr ""
-
-#: modules/widgets/readmill.php:64
-msgid "Appearance > Widgets "
-msgstr ""
-
-#: modules/widgets/readmill.php:64
-msgid "to remove it from this sidebar."
-msgstr ""
-
-#: modules/widgets/readmill.php:65
+#: modules/widgets/readmill.php:73
 msgid "This notice is only visible to logged in users that can manage widgets"
 msgstr ""
 
@@ -6566,6 +6528,10 @@ msgstr ""
 
 #: views/admin/network-activated-notice.php:3
 msgid "Jetpack is network activated and notices can not be dismissed."
+msgstr ""
+
+#: views/admin/network-settings.php:8
+msgid "Jetpack Network Settings Updated!"
 msgstr ""
 
 #: views/admin/network-settings.php:15
