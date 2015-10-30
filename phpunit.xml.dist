@@ -10,4 +10,12 @@
             <group>external-http</group>
         </exclude>
     </groups>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="false">
+            <directory suffix=".php">.</directory>
+            <exclude>
+                <directory suffix=".php">tests</directory>
+            </exclude>
+        </whitelist>
+    </filter>
 </phpunit>
